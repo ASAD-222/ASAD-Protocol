@@ -37,6 +37,7 @@
   --display:"Syncopate","Arial Black",sans-serif;
   --body:"Manrope",system-ui,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
+  --mm-cyan:#3fd4ff;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#0d0a0c; --panel:#16111a; --ink:#f6eef3; --muted:#a2909c; --line:#2b2028;
@@ -574,7 +575,8 @@ main{position:relative;z-index:1;padding-block:20px calc(110px + env(safe-area-i
 .pad .pad-sm{border:0;background:none;font-size:20px;color:var(--muted)}
 body.locked{overflow:hidden;position:fixed;inset:0;width:100%}
 body.locked .app,body.locked .tabbar,body.locked #sheetRoot,body.locked #palette,body.locked .side-scrim{visibility:hidden}
-/* Listen */
+/* Master Mind */
+.mm-group{display:grid;gap:10px;margin-top:10px}.mm-sub{margin:-4px 0 4px}
 .ls-now{background-color:var(--panel);border:1px solid var(--line);padding:18px;display:grid;gap:12px;margin-bottom:8px}
 .ls-empty p{margin:6px 0 0;color:var(--muted)}
 .ls-head{display:grid;gap:4px}
@@ -618,6 +620,47 @@ body.has-mini main{padding-bottom:calc(176px + env(safe-area-inset-bottom,0px))}
 @media (min-width:1000px){ body.has-mini main{padding-bottom:120px} }
 .ls-now{background-image:linear-gradient(var(--pink),var(--pink)),linear-gradient(var(--pink),var(--pink)),linear-gradient(var(--pink),var(--pink)),linear-gradient(var(--pink),var(--pink));
   background-size:12px 1.5px,1.5px 12px,12px 1.5px,1.5px 12px;background-position:left top,left top,right bottom,right bottom;background-repeat:no-repeat}
+
+/* ===== MASTER MIND: dark steel + gold command deck (always dark by design) ===== */
+:root.mm-on.mm-on{--bg:#06080b;--panel:#0c1015;--ink:#e9eef2;--muted:#8696a3;--line:#1b2530;--pink:#d9ad55;--pink-soft:rgba(217,173,85,.12);--pink-glow:rgba(217,173,85,.28);--mm-cyan:#3fd4ff;color-scheme:dark}
+.mm{display:grid;gap:20px;min-width:0}
+.mm-hero{position:relative;display:grid;gap:14px;padding:22px 18px 20px;border:1px solid var(--line);min-width:0;
+  background:linear-gradient(160deg,rgba(63,212,255,.08),transparent 55%),repeating-linear-gradient(0deg,transparent 0 23px,rgba(63,212,255,.045) 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,rgba(63,212,255,.045) 23px 24px),var(--panel);
+  clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,24px 100%,0 calc(100% - 24px))}
+.mm-hero::after{content:"";position:absolute;right:0;top:0;width:34px;height:34px;background:linear-gradient(225deg,var(--pink) 0 17px,transparent 17px)}
+.mm-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mm-cyan);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.mm-kicker i{width:7px;height:7px;background:var(--mm-cyan);box-shadow:0 0 10px var(--mm-cyan);display:inline-block}
+.mm-title{font-family:var(--display);font-weight:700;font-size:clamp(28px,7.5vw,48px);letter-spacing:.06em;line-height:1.02;margin:0;text-transform:uppercase;text-wrap:balance}
+.mm-title span{color:var(--pink)}
+.mm-lead{margin:0;color:var(--muted);max-width:60ch}
+.mm-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.mm-stat{border:1px solid var(--line);border-left:2px solid var(--pink);padding:10px 12px;background:rgba(0,0,0,.3);min-width:0}
+.mm-stat b{display:block;font-family:var(--display);font-size:clamp(17px,4.5vw,22px);color:var(--ink);font-variant-numeric:tabular-nums}
+.mm-stat span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.mm-rank{display:grid;gap:7px}
+.mm-rank-top{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.mm-rank-top b{color:var(--pink);font-weight:600}
+.mm-bar{height:6px;background:var(--line);position:relative;overflow:hidden}
+.mm-bar i{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--pink),var(--mm-cyan))}
+.mm-bar.sm{height:3px}
+.mm-code{display:flex;flex-wrap:wrap;gap:6px}
+.mm-code span{font-family:var(--mono);font-size:11px;letter-spacing:.05em;border:1px solid var(--line);background:rgba(0,0,0,.25);padding:5px 9px;color:var(--ink)}
+.mm-code span::before{content:"▸ ";color:var(--pink)}
+.mm-mod{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px;flex-wrap:wrap}
+.mm-mod .k{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--mm-cyan);text-transform:uppercase}
+.mm-mod h2{font-family:var(--display);letter-spacing:.14em;margin:3px 0 0;font-size:clamp(20px,5vw,26px);text-transform:uppercase}
+.mm-mod .c{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.mm .mm-sub{margin:0;color:var(--muted)}
+.mm .ls-now{border-color:var(--line);clip-path:polygon(0 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%)}
+.mm .ls-play{border-radius:0;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)}
+.mm .ls-play svg{fill:#0a0c0f}
+.mm .ep{border-radius:0;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%);gap:14px}
+.mm .ep.on{border-color:var(--pink);box-shadow:inset 3px 0 0 var(--pink)}
+.mm .ep-n{font-family:var(--display);font-size:26px;line-height:1;color:transparent;-webkit-text-stroke:1px var(--pink);padding-top:2px}
+.mm .ep-b h3{font-family:var(--body);font-weight:700;letter-spacing:.01em}
+.mm .btn{background:var(--pink);color:#0a0c0f;font-weight:600;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}
+.mm .tag{color:var(--mm-cyan)}
+.mm details summary{color:var(--pink)}
 </style>
 
 <div id="bg" aria-hidden="true"><i class="bgl" id="bgA"></i><i class="bgl" id="bgB"></i></div>
@@ -630,7 +673,7 @@ body.has-mini main{padding-bottom:calc(176px + env(safe-area-inset-bottom,0px))}
     </div>
     <button class="side-search" data-palette="1"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>Search or jump to…<kbd>Ctrl K</kbd></button>
     <div class="tree" id="tree"></div>
-    <div class="side-foot"><span>A$AD Protocol</span><span>v5.2</span></div>
+    <div class="side-foot"><span>A$AD Protocol</span><span>v5.3</span></div>
   </aside>
   <div class="work">
     <header class="topbar">
@@ -2057,7 +2100,7 @@ const TABS = [
   ["read","Read Her",'<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>'],
   ["intimacy","Intimacy",'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>'],
   ["her","Her",'<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.5 4.5-7 8-7s7 2.5 8 7"/>'],
-  ["library","Library",'<path d="M4 4h5v16H4zM10 4h5v16h-5z"/><path d="m16 5 4 1-3 14-4-1"/>']
+  ["listen","Master Mind",'<path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="5" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/>']
 ];
 const VIEWS = ["home","listen","texts","read","intimacy","mind","her","library","vault","search"];
 const S = {mindChip:"stoic", talkSeg:"texts", phase:"all", csort:"default", view:"home", textChip:"core", readChip:"signals", intChip:"desire", libSeg:"psych", level:0, q:"", herId:null, herTab:"profile", delArm:null};
@@ -2229,7 +2272,7 @@ function vHome(){
     ["Be patient","Desire often follows connection, not the other way round.","Nagoski · Kerner"]
   ];
   return `<section class="hero">
-    <div class="status"><span class="dot" aria-hidden="true"></span><span class="mono">v5.2 · JHB / SAST</span></div>
+    <div class="status"><span class="dot" aria-hidden="true"></span><span class="mono">v5.3 · JHB / SAST</span></div>
     <h1>The A$AD <span>Protocol</span></h1>
     <p class="lede">Your field manual for communicating with women: what to say, how to read her beyond words, and the psychology behind it from 10 books and 5 leading therapists.</p>
     <div class="stats"><div><b>${allLines().length}</b>Lines</div><div><b>${CONVOS.length}</b>Conversations</div><div><b>${LIB.psych.length+LIB.comm.length}</b>Books</div><div><b>${LIB.experts.length}</b>Experts</div></div>
@@ -2245,7 +2288,7 @@ function vHome(){
     <button class="tile" data-go="read" data-rchip="signals"><span class="n">Read Her</span><span class="k">Body language</span><p>Interest, mixed and discomfort signals.</p></button>
     <button class="tile" data-go="read" data-rchip="texting"><span class="n">Read Her</span><span class="k">Texting tells</span><p>Is she warming up or cooling off?</p></button>
     <button class="tile" data-go="texts" data-tseg="convos"><span class="n">Talk</span><span class="k">Conversations</span><p>57 ideas for every situation and time. Rate your favourites.</p></button>
-    <button class="tile" data-go="listen"><span class="n">Listen</span><span class="k">Audio sessions</span><p>Respect, wealth, the shadow self, attraction, presence, clear thinking, reading character and strategy, voiced for your commute.</p></button>
+    <button class="tile" data-go="listen"><span class="n">Master Mind</span><span class="k">Audio sessions</span><p>Masculine mindset training. Voiced Machiavelli sessions on respect, power, strategy and composure, with ranks as you complete them.</p></button>
     <button class="tile" data-go="mind" data-mchip="stoic"><span class="n">Mindset</span><span class="k">Stoic & strategic</span><p>Stoicism and Machiavelli, applied to dating.</p></button>
     <button class="tile" data-go="her"><span class="n">Her</span><span class="k">Know her</span><p>Profile the woman you're getting to know and get a read on her.</p></button>
     <button class="tile" data-go="intimacy" data-ichip="desire"><span class="n">Intimacy</span><span class="k">Her desire</span><p>How it works, with real examples.</p></button>
@@ -2521,7 +2564,7 @@ function playEp(id){
   const ep = EPISODES.find(e=>e.id===id); if(!ep) return; const a=PLAYER();
   if(LS.cur!==id){ LS.cur=id; a.src=ep.file; a.load(); const start=lsPos[id]||0; if(start>5) a.addEventListener("loadedmetadata",()=>{ try{ a.currentTime=start; }catch(_){} },{once:true}); }
   a.play().catch(()=>{ const m=$("lsMsg"); if(m) m.textContent="Couldn't play this session. Check your connection and try again."; });
-  if("mediaSession" in navigator){ try{ navigator.mediaSession.metadata = new MediaMetadata({title:ep.title, artist:"A$AD Protocol", album:"Listening sessions", artwork:[{src:"icon-512.png",sizes:"512x512",type:"image/png"}]});
+  if("mediaSession" in navigator){ try{ navigator.mediaSession.metadata = new MediaMetadata({title:ep.title, artist:"A$AD Protocol", album:"Master Mind", artwork:[{src:"icon-512.png",sizes:"512x512",type:"image/png"}]});
     navigator.mediaSession.setActionHandler("play",()=>a.play()); navigator.mediaSession.setActionHandler("pause",()=>a.pause());
     navigator.mediaSession.setActionHandler("seekbackward",()=>{a.currentTime=Math.max(0,a.currentTime-15)}); navigator.mediaSession.setActionHandler("seekforward",()=>{a.currentTime=Math.min(a.duration||0,a.currentTime+15)}); }catch(_){} }
 }
@@ -2547,23 +2590,48 @@ function playerUI(){
   if(mini){ const show = !!ep && S.view!=="listen" && !document.body.classList.contains("locked");
     mini.hidden=!show; document.body.classList.toggle("has-mini", show);
     if(show) mini.innerHTML=`<button class="mp-play" data-lstoggle="1" aria-label="${a.paused?"Play":"Pause"}">${a.paused?'<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>':'<svg viewBox="0 0 24 24"><path d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg>'}</button>
-      <button class="mp-title" data-go="listen"><span class="lbl">Listening</span><span class="mp-t">${esc(ep.title)}</span></button>
+      <button class="mp-title" data-go="listen"><span class="lbl">Master Mind</span><span class="mp-t">${esc(ep.title)}</span></button>
       <span class="mp-time" id="mpT">${fmtT(a.currentTime)}</span>
       <button class="mp-x" data-lsstop="1" aria-label="Stop"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>`; }
 }
 function vListen(){
-  const done = EPISODES.filter(e=>lsDone[e.id]).length;
-  return head("Listen","Listening sessions") + `<p class="intro">Audio sessions for your commute, the gym or a quiet evening. Each one is an original script built from the videos you shared, voiced so you can listen anywhere.</p>
+  const done = EPISODES.filter(e=>lsDone[e.id]).length, total=EPISODES.length;
+  const mins = Math.round(EPISODES.reduce((t,e)=>t+(EP_SECS[e.id]||480),0)/60);
+  const rk = mmRank(done), pct = total? Math.round(done/total*100):0;
+  return `<div class="mm">
+  <header class="mm-hero">
+    <div class="mm-kicker"><i aria-hidden="true"></i>A$AD Protocol // Masculine mindset</div>
+    <h1 class="mm-title">Master <span>Mind</span></h1>
+    <p class="mm-lead">Train the mind of the man you're becoming: composed under pressure, respected without needing approval, strategic, disciplined and strong enough to protect what he loves.</p>
+    <div class="mm-stats">
+      <div class="mm-stat"><b>${total}</b><span>Sessions</span></div>
+      <div class="mm-stat"><b>${Math.floor(mins/60)}h ${String(mins%60).padStart(2,"0")}</b><span>Training</span></div>
+      <div class="mm-stat"><b>${done}/${total}</b><span>Completed</span></div>
+    </div>
+    <div class="mm-rank"><div class="mm-rank-top"><span>Rank: <b>${rk.name}</b></span><span>${rk.next?rk.need+" to "+rk.next:"Max rank"}</span></div><div class="mm-bar" role="progressbar" aria-label="Sessions completed" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div></div>
+    <div class="mm-code"><span>Calm under pressure</span><span>Actions over words</span><span>Standards over approval</span><span>Strength that protects</span></div>
+  </header>
   <div class="ls-now hud-box" id="lsNow"></div>
-  <div class="view-head sub"><div><div class="mono">${EPISODES.length} sessions · ${done} finished</div><h2>Library</h2></div></div>
-  <div class="eps">${EPISODES.map((e,i)=>{ const p=lsPos[e.id]||0, on=LS.cur===e.id;
+  ${MM_GROUPS.map(g=>{ const eps=EPISODES.filter(e=>mmGroup(e)===g.k); if(!eps.length) return "";
+    const gd=eps.filter(e=>lsDone[e.id]).length;
+    return `<section class="mm-group"><div class="mm-mod"><div><div class="k">Module ${g.n}</div><h2>${esc(g.k)}</h2></div><div class="c">${gd}/${eps.length} complete</div></div>
+    <p class="note mm-sub">${esc(g.d)}</p>
+    <div class="eps">${eps.map((e,i)=>epCard(e,i)).join("")}</div></section>`; }).join("")}
+  </div>`;
+}
+const MM_GROUPS=[{k:"Machiavelli",n:"01",d:"Power, respect and strategy from The Prince and the masters of human nature. Used to protect yourself, lead and stay composed, never to harm."}];
+function mmGroup(e){ return "Machiavelli"; }
+const EP_SECS={ep1:466,ep2:460,ep3:466,ep4:424,ep5:510,ep6:597,ep7:594,ep8:597,ep9:561,ep10:551,ep11:506,ep12:495};
+const MM_RANKS=[[0,"Recruit"],[1,"Initiate"],[3,"Operator"],[6,"Strategist"],[9,"Commander"],[12,"Mastermind"]];
+function mmRank(n){ let r=MM_RANKS[0]; MM_RANKS.forEach(x=>{ if(n>=x[0]) r=x; }); const nx=MM_RANKS.find(x=>x[0]>n); return {name:r[1], next:nx?nx[1]:null, need:nx?nx[0]-n:0}; }
+function epCard(e,i){ const p=lsPos[e.id]||0, on=LS.cur===e.id;
     return `<article class="ep${on?" on":""}"><div class="ep-n">${String(i+1).padStart(2,"0")}</div><div class="ep-b">
-      <div class="row"><span class="tag">${esc(e.topic)}</span><span class="note">${e.dur}${lsDone[e.id]?" · ✓ Finished":p>5?" · Resume at "+fmtT(p):""}</span></div>
+      <div class="row"><span class="tag">${esc(e.topic.replace(/^Machiavelli · /,""))}</span><span class="note">${e.dur}${lsDone[e.id]?" · ✓ Finished":p>5?" · Resume at "+fmtT(p):""}</span></div>
       <h3>${esc(e.title)}</h3><p>${esc(e.summary)}</p>
+      <div class="mm-bar sm" aria-hidden="true"><i style="width:${lsDone[e.id]?100:Math.min(100,Math.round(p/(EP_SECS[e.id]||480)*100))}%"></i></div>
       <details><summary>Key takeaways</summary><ul>${e.points.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><p class="note">Inspired by the YouTube video "${esc(e.src)}". Script rewritten in original words.</p></details>
       <div class="row"><button class="btn" data-lsplay="${e.id}">${on&&!PLAYER().paused?"Playing…":p>5&&!lsDone[e.id]?"Resume":"Play"}</button>${lsDone[e.id]?`<button class="del" data-lsreset="${e.id}">Mark as new</button>`:""}</div>
-    </div></article>`; }).join("")}</div>`;
-}
+    </div></article>`; }
 (function wirePlayer(){
   const a=PLAYER(); if(!a) return;
   let lastSave=0;
@@ -2658,6 +2726,7 @@ function closeSheet(){ $("sheetRoot").innerHTML=""; document.body.style.overflow
 function render(){
   $("tabbar").innerHTML = TABS.map(([id,n,ic])=>`<button class="tab" data-go="${id}" ${S.view===id?'aria-current="page"':''}><svg viewBox="0 0 24 24" aria-hidden="true">${ic}</svg>${n}</button>`).join("");
   const map={home:vHome,texts:vTexts,read:vRead,intimacy:vIntimacy,mind:vMind,listen:vListen,her:vHer,library:vLibrary,vault:vVault,search:vSearch};
+  document.documentElement.classList.toggle("mm-on", S.view==="listen");
   $("view").innerHTML = map[S.view]();
   if(typeof renderShell==="function") renderShell();
   if(typeof playerUI==="function") playerUI();
@@ -2828,7 +2897,7 @@ try{ if(localStorage.getItem("asad-noside")==="1") document.getElementById("app"
 function navTargets(){
   const T = [];
   T.push({g:"Home", label:"Home", attrs:'data-go="home"', on:S.view==="home", icon:"home"});
-  T.push({g:"Listen", label:"Listening sessions", n:EPISODES.length, attrs:'data-go="listen"', on:S.view==="listen", icon:"listen"});
+  T.push({g:"Master Mind", label:"Master Mind", n:EPISODES.length, attrs:'data-go="listen"', on:S.view==="listen", icon:"listen"});
   T.push({g:"Talk", label:"Core Code", sub:"Texts", attrs:'data-go="texts" data-chip="core"', on:S.view==="texts"&&S.talkSeg==="texts"&&S.textChip==="core"});
   MODULES.forEach(m=>T.push({g:"Talk", sub:"Texts", label:m.name, n:m.lines.length, attrs:`data-go="texts" data-chip="${m.id}"`, on:S.view==="texts"&&S.talkSeg==="texts"&&S.textChip===m.id}));
   T.push({g:"Talk", sub:"Conversations", label:"All conversations", n:CONVOS.length, attrs:'data-go="texts" data-tseg="convos" data-phase="all"', on:S.view==="texts"&&S.talkSeg==="convos"&&S.phase==="all"});
@@ -2847,7 +2916,7 @@ function navTree(){
   const T = navTargets();
   const item = t => `<button class="ti" ${t.attrs} ${t.on?'aria-current="page"':""}>${t.icon?svgI(t.icon):""}<span class="tl">${esc(t.label)}</span>${t.n!==undefined?`<span class="tn">${t.n}</span>`:""}</button>`;
   const grp = (key,label,inner,open) => `<details data-k="${key}" ${open?"open":""}><summary>${label}</summary><div class="kids">${inner}</div></details>`;
-  let h = `<div class="tree-label">Workspace</div>` + item(Object.assign(T[0],{icon:"home"})).replace('class="ti"','class="ti top"') + item(T.find(t=>t.g==="Listen")).replace('class="ti"','class="ti top"');
+  let h = `<div class="tree-label">Workspace</div>` + item(Object.assign(T[0],{icon:"home"})).replace('class="ti"','class="ti top"') + item(T.find(t=>t.g==="Master Mind")).replace('class="ti"','class="ti top"');
   TREE_GROUPS.forEach(([g,key,view])=>{
     const items = T.filter(t=>t.g===g);
     let inner;
@@ -2874,7 +2943,7 @@ function crumbs(){
     if(p){ C.push([p.name||"Unnamed",`data-her="${p.id}"`]); C.push([{tracker:"Tracker",profile:"Profile",revival:"Revival",read:"Her read"}[S.herTab]||""]); } else C.push(["Pipeline"]); }
   if(S.view==="library"){ C.push(["Library",'data-go="library"']); C.push([(LIB_SEGS.find(x=>x[0]===S.libSeg)||[0,""])[1]]); }
   if(S.view==="mind"){ C.push(["Mindset",'data-go="mind"']); C.push([(MIND.find(x=>x.id===S.mindChip)||{name:""}).name]); }
-  if(S.view==="listen"){ C.push(["Listen"]); }
+  if(S.view==="listen"){ C.push(["Master Mind"]); }
   if(S.view==="vault") C.push(["My Vault"]);
   if(S.view==="search") C.push(["Search"]);
   return C.map((c,i)=> i===C.length-1 ? `<span class="cur">${esc(c[0])}</span>` : `<button ${c[1]||""} class="${i<C.length-2?"hide-sm":""}">${esc(c[0])}</button><span class="sep ${i<C.length-2?"hide-sm":""}">/</span>`).join("");
@@ -2883,13 +2952,13 @@ function renderShell(){
   const tr=$("tree"); if(tr){ const st=tr.scrollTop; tr.innerHTML=navTree(); tr.scrollTop=st; }
   const cr=$("crumbs"); if(cr) cr.innerHTML=crumbs();
   const rib=$("ribbon"); if(rib) rib.innerHTML = TABS.map(([id,n])=>`<button class="rb" data-go="${id}" title="${n}" aria-label="${n}" ${S.view===id?'aria-current="page"':''}>${svgI(id)}</button>`).join("")
-    + `<button class="rb" data-go="listen" title="Listen" aria-label="Listen" ${S.view==="listen"?'aria-current="page"':''}>${svgI("listen")}</button>`
+    + `<button class="rb" data-go="library" title="Library" aria-label="Library" ${S.view==="library"?'aria-current="page"':''}>${svgI("library")}</button>`
     + `<button class="rb" data-go="mind" title="Mindset" aria-label="Mindset" ${S.view==="mind"?'aria-current="page"':''}>${svgI("mind")}</button>`
     + `<button class="rb" data-go="vault" title="My Vault" aria-label="My Vault" ${S.view==="vault"?'aria-current="page"':''}>${svgI("vault")}</button><span class="sp"></span>`
     + `<button class="rb" data-palette="1" title="Search or jump to (Ctrl K)" aria-label="Search or jump to">${svgI("search")}</button>`
     + `<button class="rb" data-themebtn="1" title="Light or dark" aria-label="Switch light or dark mode"><svg class="sun" viewBox="0 0 24 24">${ICON.sun}</svg><svg class="moon" viewBox="0 0 24 24">${ICON.moon}</svg></button>`
     + `<button class="rb" data-lockapp="1" title="Lock" aria-label="Lock app">${svgI("lock")}</button>`;
-  const stt=$("status"); if(stt){ const act=profiles.filter(p=>!p.outcome).length; stt.innerHTML=`<span><b>●</b> Local & private</span><span>${act} active</span><span>${allLines().length} lines</span><span>${CONVOS.length} conversations</span><span>v5.2</span>`; }
+  const stt=$("status"); if(stt){ const act=profiles.filter(p=>!p.outcome).length; stt.innerHTML=`<span><b>●</b> Local & private</span><span>${act} active</span><span>${allLines().length} lines</span><span>${CONVOS.length} conversations</span><span>v5.3</span>`; }
 }
 function setSide(open){ SHELL.sideOpen=open; $("side").classList.toggle("open",open); $("sideScrim").classList.toggle("on",open); }
 const isDesk = () => matchMedia("(min-width:1000px)").matches;
@@ -2905,7 +2974,7 @@ function palItems(q){
   T.push({k:"Action", label:"Lock the app", attrs:'data-lockapp="1"'});
   T.push({k:"Action", label:"Switch light or dark mode", attrs:'data-themebtn="1"'});
   const match = t => words.every(w=>(t.k+" "+t.label).toLowerCase().includes(w));
-  let out = words.length ? T.filter(match) : T.filter(t=>["Home","Listen","Talk","Read Her","Intimacy","Mindset","Her","Library","Vault"].includes(t.k)).slice(0,14);
+  let out = words.length ? T.filter(match) : T.filter(t=>["Home","Master Mind","Talk","Read Her","Intimacy","Mindset","Her","Library","Vault"].includes(t.k)).slice(0,14);
   if(words.length) out.unshift({k:"Search", label:`Search all content for “${q}”`, attrs:`data-go="search" data-q="${esc(q)}"`});
   return out.slice(0,40);
 }
