@@ -574,6 +574,50 @@ main{position:relative;z-index:1;padding-block:20px calc(110px + env(safe-area-i
 .pad .pad-sm{border:0;background:none;font-size:20px;color:var(--muted)}
 body.locked{overflow:hidden;position:fixed;inset:0;width:100%}
 body.locked .app,body.locked .tabbar,body.locked #sheetRoot,body.locked #palette,body.locked .side-scrim{visibility:hidden}
+/* Listen */
+.ls-now{background-color:var(--panel);border:1px solid var(--line);padding:18px;display:grid;gap:12px;margin-bottom:8px}
+.ls-empty p{margin:6px 0 0;color:var(--muted)}
+.ls-head{display:grid;gap:4px}
+.ls-head h3{margin:0;font-size:19px}
+.ls-seek{-webkit-appearance:none;appearance:none;width:100%;height:28px;margin:0;background:transparent;cursor:pointer;touch-action:pan-y}
+.ls-seek::-webkit-slider-runnable-track{height:5px;border-radius:3px;background:linear-gradient(to right,var(--pink) 0 var(--v),var(--line) var(--v) 100%)}
+.ls-seek::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;margin-top:-5.5px;border-radius:50%;background:var(--pink);border:3px solid var(--panel)}
+.ls-seek::-moz-range-track{height:5px;border-radius:3px;background:var(--line)}
+.ls-seek::-moz-range-progress{height:5px;border-radius:3px;background:var(--pink)}
+.ls-seek::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--pink);border:3px solid var(--panel)}
+.ls-time{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:-6px}
+.ls-ctrl{display:flex;align-items:center;justify-content:center;gap:18px}
+.ls-b{display:flex;align-items:center;gap:2px;background:none;border:0;cursor:pointer;color:var(--ink);font-family:var(--mono);font-size:11px;padding:8px}
+.ls-b svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+.ls-play{width:58px;height:58px;border-radius:50%;border:0;background:var(--pink);display:grid;place-items:center;cursor:pointer}
+.ls-play svg{width:24px;height:24px;fill:#fff}
+.ls-rate{font-family:var(--mono);font-size:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:5px 9px;border-radius:5px;cursor:pointer;min-width:52px}
+.eps{display:grid;gap:10px}
+.ep{display:grid;grid-template-columns:auto 1fr;gap:16px;background:var(--panel);border:1px solid var(--line);padding:16px;min-width:0}
+.ep.on{border-color:var(--pink);box-shadow:inset 3px 0 0 var(--pink)}
+.ep-n{font-family:var(--display);font-size:20px;color:var(--pink);padding-top:2px}
+.ep-b{display:grid;gap:8px;min-width:0}
+.ep-b h3{margin:0;font-size:17px}
+.ep-b p{margin:0;font-size:14px}
+.ep details summary{cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ep details ul{margin:8px 0;padding-left:18px;display:grid;gap:4px;font-size:14px}
+.ep details .note{margin-top:4px}
+#miniPlayer{position:fixed;z-index:19;left:max(10px,env(safe-area-inset-left,0px));right:max(10px,env(safe-area-inset-right,0px));bottom:calc(68px + env(safe-area-inset-bottom,0px));
+  display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--pink);border-radius:10px;padding:8px 10px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+#miniPlayer[hidden]{display:none}
+@media (min-width:1000px){ #miniPlayer{left:auto;right:20px;bottom:42px;width:360px} }
+.mp-play{width:38px;height:38px;flex:0 0 38px;border-radius:50%;border:0;background:var(--pink);display:grid;place-items:center;cursor:pointer}
+.mp-play svg{width:16px;height:16px;fill:#fff}
+.mp-title{flex:1;min-width:0;display:grid;text-align:left;background:none;border:0;cursor:pointer;padding:0;color:var(--ink)}
+.mp-t{font-size:13.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mp-time{font-family:var(--mono);font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.mp-x{background:none;border:0;cursor:pointer;color:var(--muted);display:grid;place-items:center;width:28px;height:28px}
+.mp-x svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+body.locked #miniPlayer{visibility:hidden}
+body.has-mini main{padding-bottom:calc(176px + env(safe-area-inset-bottom,0px))}
+@media (min-width:1000px){ body.has-mini main{padding-bottom:120px} }
+.ls-now{background-image:linear-gradient(var(--pink),var(--pink)),linear-gradient(var(--pink),var(--pink)),linear-gradient(var(--pink),var(--pink)),linear-gradient(var(--pink),var(--pink));
+  background-size:12px 1.5px,1.5px 12px,12px 1.5px,1.5px 12px;background-position:left top,left top,right bottom,right bottom;background-repeat:no-repeat}
 </style>
 
 <div id="bg" aria-hidden="true"><i class="bgl" id="bgA"></i><i class="bgl" id="bgB"></i></div>
@@ -586,7 +630,7 @@ body.locked .app,body.locked .tabbar,body.locked #sheetRoot,body.locked #palette
     </div>
     <button class="side-search" data-palette="1"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>Search or jump to…<kbd>Ctrl K</kbd></button>
     <div class="tree" id="tree"></div>
-    <div class="side-foot"><span>A$AD Protocol</span><span>v5.0</span></div>
+    <div class="side-foot"><span>A$AD Protocol</span><span>v5.2</span></div>
   </aside>
   <div class="work">
     <header class="topbar">
@@ -615,6 +659,8 @@ body.locked .app,body.locked .tabbar,body.locked #sheetRoot,body.locked #palette
     <div class="pal-foot"><span>↑↓ to move</span><span>Enter to open</span><span>Esc to close</span></div>
   </div>
 </div>
+<audio id="player" preload="metadata"></audio>
+<div id="miniPlayer" hidden></div>
 <div id="sheetRoot"></div>
 
 <script>
@@ -2013,8 +2059,8 @@ const TABS = [
   ["her","Her",'<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.5 4.5-7 8-7s7 2.5 8 7"/>'],
   ["library","Library",'<path d="M4 4h5v16H4zM10 4h5v16h-5z"/><path d="m16 5 4 1-3 14-4-1"/>']
 ];
-const VIEWS = ["home","texts","read","intimacy","her","library","vault","search"];
-const S = {talkSeg:"texts", phase:"all", csort:"default", view:"home", textChip:"core", readChip:"signals", intChip:"desire", libSeg:"psych", level:0, q:"", herId:null, herTab:"profile", delArm:null};
+const VIEWS = ["home","listen","texts","read","intimacy","mind","her","library","vault","search"];
+const S = {mindChip:"stoic", talkSeg:"texts", phase:"all", csort:"default", view:"home", textChip:"core", readChip:"signals", intChip:"desire", libSeg:"psych", level:0, q:"", herId:null, herTab:"profile", delArm:null};
 let crates = {};
 try{ crates = JSON.parse(localStorage.getItem("asad-crates")||"{}"); }catch(e){ crates = {}; }
 let vault = [];
@@ -2117,6 +2163,7 @@ async function pinOK(pin){ const h=await hashPin(pin); return h===PIN_HASH || h=
 function setLocked(on){
   document.body.classList.toggle("locked", !!on);
   ["#app",".tabbar","#palette","#status"].forEach(sel=>{ const el=document.querySelector(sel); if(el){ if(on) el.setAttribute("inert",""); else el.removeAttribute("inert"); }});
+  if(typeof playerUI==="function") setTimeout(playerUI,0);
   if(on){ if(!document.body.dataset.sy) document.body.dataset.sy=String(window.scrollY||0); if(typeof closePal==="function") closePal(); if(typeof setSide==="function") setSide(false); }
   else { const y=+(document.body.dataset.sy||0); delete document.body.dataset.sy; requestAnimationFrame(()=>window.scrollTo(0,y)); }
 }
@@ -2182,7 +2229,7 @@ function vHome(){
     ["Be patient","Desire often follows connection, not the other way round.","Nagoski · Kerner"]
   ];
   return `<section class="hero">
-    <div class="status"><span class="dot" aria-hidden="true"></span><span class="mono">v5.0 · JHB / SAST</span></div>
+    <div class="status"><span class="dot" aria-hidden="true"></span><span class="mono">v5.2 · JHB / SAST</span></div>
     <h1>The A$AD <span>Protocol</span></h1>
     <p class="lede">Your field manual for communicating with women: what to say, how to read her beyond words, and the psychology behind it from 10 books and 5 leading therapists.</p>
     <div class="stats"><div><b>${allLines().length}</b>Lines</div><div><b>${CONVOS.length}</b>Conversations</div><div><b>${LIB.psych.length+LIB.comm.length}</b>Books</div><div><b>${LIB.experts.length}</b>Experts</div></div>
@@ -2198,6 +2245,8 @@ function vHome(){
     <button class="tile" data-go="read" data-rchip="signals"><span class="n">Read Her</span><span class="k">Body language</span><p>Interest, mixed and discomfort signals.</p></button>
     <button class="tile" data-go="read" data-rchip="texting"><span class="n">Read Her</span><span class="k">Texting tells</span><p>Is she warming up or cooling off?</p></button>
     <button class="tile" data-go="texts" data-tseg="convos"><span class="n">Talk</span><span class="k">Conversations</span><p>57 ideas for every situation and time. Rate your favourites.</p></button>
+    <button class="tile" data-go="listen"><span class="n">Listen</span><span class="k">Audio sessions</span><p>Respect, wealth, the shadow self, attraction, presence, clear thinking, reading character and strategy, voiced for your commute.</p></button>
+    <button class="tile" data-go="mind" data-mchip="stoic"><span class="n">Mindset</span><span class="k">Stoic & strategic</span><p>Stoicism and Machiavelli, applied to dating.</p></button>
     <button class="tile" data-go="her"><span class="n">Her</span><span class="k">Know her</span><p>Profile the woman you're getting to know and get a read on her.</p></button>
     <button class="tile" data-go="intimacy" data-ichip="desire"><span class="n">Intimacy</span><span class="k">Her desire</span><p>How it works, with real examples.</p></button>
     <button class="tile" data-go="intimacy" data-ichip="talk"><span class="n">Intimacy</span><span class="k">Talk about it</span><p>Open up without awkwardness.</p></button>
@@ -2306,6 +2355,237 @@ function vIntimacy(){
   return html;
 }
 
+/* ===================== MINDSET: Stoicism + Machiavelli =====================
+   point: [heading, explanation, situation, what to do, what to say (optional)] */
+const MIND = [
+ {id:"stoic", name:"Stoicism", title:"Stoicism: Master Yourself",
+  who:"Zeno founded it around 300 BC. Its best-known teachers were Epictetus (born a slave), Seneca (a statesman and writer) and Marcus Aurelius (a Roman emperor). Key reads: Meditations, the Enchiridion and Letters from a Stoic.",
+  intro:"A 2,000-year-old philosophy for staying calm, clear and in control of yourself, whatever happens around you. In dating it's the cure for neediness, overthinking and taking things personally, and it makes you steady, which is deeply attractive.",
+  points:[
+   ["Control what you can","Epictetus's first lesson: some things are up to you (your words, your effort, your standards, how you respond) and some aren't (whether she replies, her mood, her past, her choices). Put all your energy into the first list and let go of the second.",
+    "You sent a great message and she hasn't replied in six hours.",
+    "Remind yourself: the message was yours, the reply is hers. Don't double-text. Get on with your day; the calm shows in your next message.",null],
+   ["It's your judgment, not the event","Epictetus taught that what upsets us isn't what happens, but the story we tell ourselves about it. Change the story and the feeling changes.",
+    "She cancels your date an hour before.",
+    "Replace 'she's not interested' or 'I'm not enough' with 'plans changed, let's see if she reschedules.' Reply once, warmly, and leave the next move to her.",
+    "No stress at all. Let me know what works better for you."],
+   ["Want it, don't need it","The Stoics called things like approval and success 'preferred indifferents': good to have, but not what your worth depends on. Prefer that she likes you; never need it. Neediness is what pushes people away.",
+    "You're about to ask her out.",
+    "Ask clearly and mean it, and be genuinely fine with either answer. That ease is what makes a yes more likely.",
+    "I'd like to take you out on Thursday. If it's not your thing, no hard feelings."],
+   ["Rehearse the worst","Seneca practised 'premeditation of evils': calmly picturing what could go wrong so it can't knock you off balance when it happens.",
+    "The night before a first date.",
+    "Picture an awkward silence, her arriving late, a 'no' when you lean in. See yourself handling each one calmly, with a smile. You'll walk in relaxed because nothing can surprise you.",null],
+   ["Pause before you react","Marcus Aurelius wrote that you have power over your mind, not over outside events. The space between what happens and how you respond is where self-control lives.",
+    "She sends a message that annoys you.",
+    "Put the phone down. Reply later, to the point she made, not to the feeling it gave you.",
+    "Fair point. Here's how I see it…"],
+   ["Every outcome teaches","Stoics accepted whatever happened and used it to grow (later called amor fati, loving your fate). A rejection isn't a wound, it's information.",
+    "A connection fizzles out.",
+    "Write the lesson in her tracker log, wish her well, and move on to the next person without bitterness.",
+    "Take care of yourself. It was good getting to know you."],
+   ["Be good, not just look good","For the Stoics, character was the only true good. Honesty and integrity are also the most attractive things you can bring, and you never have to keep track of a lie.",
+    "You're tempted to exaggerate something to impress her.",
+    "Tell the true version with confidence. Real beats impressive, and she'll trust you more for it.",null]
+  ],
+  practices:[
+   ["Morning control check","Before your day starts: what's in my control today, and what isn't? Ten seconds, every morning."],
+   ["Premeditation","Before a date or a hard conversation, picture what could go wrong and how you'd calmly handle it."],
+   ["Evening review","Seneca's habit: what did I do well today, what did I do badly, what will I do better tomorrow? Use her interaction log for this."],
+   ["The view from above","When something feels huge, zoom out like Marcus Aurelius: will this matter in a year?"],
+   ["Voluntary discomfort","Choose small hardships (a cold shower, a day off social media) so real setbacks feel smaller."]
+  ],
+  mistakes:["Thinking Stoic means emotionless. Feel it, just don't let it drive","Going cold on her and calling it 'detachment'","Using indifference as an excuse not to care","Bottling everything up instead of handling it"]},
+
+ {id:"mach", name:"Machiavelli", title:"Machiavelli: See Clearly",
+  who:"Niccolò Machiavelli (1469–1527) was a Florentine diplomat. He wrote The Prince, a blunt guide to how power actually works rather than how it should.",
+  intro:"'Machiavellian' now means cunning and manipulative, and psychologists measure it as a personality trait. Studies link high Machiavellianism to shorter, less satisfying relationships and lower trust, so the dark side backfires in love. His real value is realism: reading people, managing perception, timing and boundaries. Use it to see clearly and protect yourself, never to deceive.",
+  points:[
+   ["Read actions, not words","Machiavelli urged seeing people as they are, not as they say they are. Patterns of behaviour reveal priorities better than any message.",
+    "She says she's 'just busy' every time you suggest meeting.",
+    "Watch the pattern over two or three weeks. Someone interested but busy offers another time. Someone who isn't, doesn't. Then act on what you see.",
+    "Sounds like a packed week. When's good for you?"],
+   ["Perception matters","He observed that everyone sees what you appear to be, but few know what you really are. First impressions are made from appearance.",
+    "Your profile, your first message, your first date.",
+    "Make what you show true but well presented: good photos, a sharp outfit, a clear plan. Presentation isn't fakery; it's respect for her and yourself.",null],
+   ["Adapt to the moment","His idea of virtù: plan carefully, but fortune changes, and the person who adapts boldly wins.",
+    "Your rooftop plan falls through because of rain.",
+    "Pivot confidently on the spot. Leading calmly when plans change is very attractive.",
+    "Change of plan. I know a spot nearby. Trust me."],
+   ["Respected over liked","He said that if you can't be both, it's safer to be feared than loved, but never hated. In relationships that means boundaries. A man with none is liked but not respected.",
+    "She's late again, by 40 minutes, with no apology.",
+    "State your boundary once, calmly, without anger. Then hold it.",
+    "I enjoy spending time with you, but I won't wait 40 minutes. Next time, just let me know."],
+   ["Keep your counsel","He advised against revealing your plans and hand too early. In dating, letting things unfold builds mystery (Perel) and avoids pressure.",
+    "Early on, you're tempted to tell her how much you like her and picture your future together.",
+    "Show interest through time and attention, and let your words keep pace with hers.",null],
+   ["Know the terrain","Study the situation before you act: who has influence, what the dynamics are.",
+    "Meeting her friends for the first time.",
+    "Observe for the first few minutes. Notice whose opinion she values most, and make a genuine connection with that friend.",null]
+  ],
+  watch:[
+   ["Love-bombing","Overwhelming attention and promises very early, then pulling it away."],
+   ["Hot and cold on purpose","Warm, then distant, then warm again, to keep you chasing."],
+   ["Guilt-tripping","Making you feel responsible for her feelings to get her way."],
+   ["Gaslighting","'That never happened' or 'you're too sensitive' about things that clearly did happen."],
+   ["Triangulation","Mentioning other options to make you jealous or compete."],
+   ["Isolation","Pulling you away from friends who'd give you an honest view."]
+  ],
+  line:[
+   ["Strategy","Presenting your true self well. Good timing. Clear boundaries. Reading people accurately. Leading with confidence."],
+   ["Manipulation","Lying. Faking feelings. Exploiting her insecurities. Pressure or guilt. Anything that overrides her free choice."]
+  ],
+  mistakes:["Treating her like an opponent to beat","Playing games and calling it strategy","Believing 'feared over loved' means being cold or controlling","Winning a moment and losing her trust"]},
+
+ {id:"blend", name:"The Synthesis", title:"Stoic Inside, Strategic Outside",
+  who:"Combining both: a calm core, clear eyes and clean hands.",
+  intro:"Stoicism gives you control of yourself. Machiavelli gives you a realistic view of people. Integrity keeps both honest. Together they make you the calm, perceptive, trustworthy man who's rare and magnetic.",
+  pillars:[
+   ["Calm core","Stoic","Your mood doesn't depend on her replies. You handle setbacks with steadiness."],
+   ["Clear eyes","Machiavelli","You read patterns, not promises. You see situations as they are and adapt."],
+   ["Clean hands","Integrity","You never lie, pressure or manipulate. Strategy stops where her free choice begins."]
+  ],
+  routine:[
+   ["Morning","Control check: what's mine to handle today, and what isn't?"],
+   ["Before she replies","Don't refresh the chat. Your effort is done; the reply is hers."],
+   ["Before a date","Rehearse the worst calmly, then read the terrain when you arrive."],
+   ["When it's tense","Pause. Respond to the point, not the feeling. Hold your boundary kindly."],
+   ["Evening","Review: what worked, what didn't, what next. Log it in her tracker."]
+  ]}
+];
+function vMind(){
+  if(!MIND.find(x=>x.id===S.mindChip)) S.mindChip="stoic";
+  const t = MIND.find(x=>x.id===S.mindChip), idx = MIND.indexOf(t);
+  let h = head("Mindset","Philosophy for the game") + `<p class="intro">Two of the most influential schools of thought on human behaviour, applied to dating: Stoicism to master yourself, Machiavelli to see people clearly.</p>
+  <div class="chips" role="toolbar" aria-label="Topics">${MIND.map(x=>`<button class="chip" aria-pressed="${S.mindChip===x.id}" data-mchip="${x.id}">${x.name}</button>`).join("")}</div>
+  <div class="view-head"><div><div class="mono">Part ${idx+1} of ${MIND.length}</div><h2>${esc(t.title)}</h2></div></div>
+  <p class="intro">${esc(t.intro)}</p><p class="how"><b>Who and what</b>${esc(t.who)}</p>`;
+  if(t.points) h += `<div class="pts">${t.points.map(pointCard).join("")}</div>`;
+  if(t.practices) h += `<div class="sub">${head("Daily practice","Train it")}</div><div class="tools">${t.practices.map(([n,p],i)=>`<div class="rule"><b>${String(i+1).padStart(2,"0")}</b><div><h3>${esc(n)}</h3><p>${esc(p)}</p></div></div>`).join("")}</div>`;
+  if(t.watch) h += `<div class="sub">${head("Protect yourself","Manipulation to recognise")}</div><p class="intro">Machiavelli's real gift is seeing tactics clearly, so they can't be used on you.</p><div class="rules">${t.watch.map(([n,p])=>sig("stop",[n+": "+p,""])).join("")}</div>`;
+  if(t.line) h += `<div class="sub">${head("The line","Strategy vs manipulation")}</div><div class="pair"><div class="rule strong"><b>✓</b><div><p class="mono" style="color:var(--pink)">${t.line[0][0]}</p><p>${esc(t.line[0][1])}</p></div></div><div class="rule weak"><b>✕</b><div><p class="mono">${t.line[1][0]}</p><p>${esc(t.line[1][1])}</p></div></div></div><p class="intro" style="margin-top:12px">Cross the line and you might win a moment, but you lose her trust, and with it the relationship.</p>`;
+  if(t.pillars) h += `<div class="dash" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">${t.pillars.map(([n,s,p])=>`<div class="dcard"><span class="lbl">${esc(s)}</span><div class="big-n" style="font-size:20px">${esc(n)}</div><span class="note" style="font-size:14px;color:var(--ink)">${esc(p)}</span></div>`).join("")}</div>`;
+  if(t.routine) h += `<div class="sub">${head("Daily routine","Put it together")}</div><div class="ckgroup">${t.routine.map(([w,p])=>`<div class="ck" style="grid-template-columns:120px 1fr;cursor:default"><span class="cd" style="color:var(--pink)">${esc(w)}</span><span class="ct">${esc(p)}</span></div>`).join("")}</div>`;
+  if(t.mistakes) h += `<div class="sub">${head("Avoid","Common mistakes")}</div><div class="rules">${t.mistakes.map(m=>sig("stop",[m,""])).join("")}</div>`;
+  const nx = MIND[(idx+1)%MIND.length];
+  h += `<div class="row" style="margin-top:22px"><span></span><button class="btn ghost" data-mchip="${nx.id}" data-top="1">Next: ${esc(nx.name)} →</button></div>`;
+  return h;
+}
+
+/* ===================== LISTEN: audio sessions ===================== */
+const EPISODES = [
+ {id:"ep1", file:"listen-1.mp3", title:"Stop Wanting to Be Liked", topic:"Machiavelli · Respect", dur:"8 min", src:"Stop wanting to be liked",
+  summary:"Why chasing approval costs you respect, and how calm boundaries, steady emotions and a full life earn it back.",
+  points:["Needing approval makes you predictable and easy to take for granted","Respect comes from boundaries: calm, clear, proportional consequences","Stay steady under pressure: no button to push","Be consistent in your values, never hot and cold","Fox to see traps, lion to stand firm, never the wolf"]},
+ {id:"ep2", file:"listen-2.mp3", title:"Build What Creates Wealth", topic:"Machiavelli · Money", dur:"8 min", src:"Forget Getting Rich: Build the System That Makes Wealth Inevitable",
+  summary:"Machiavelli's question applied to money: what do you own that keeps working if you stop? Includes a 90-day challenge.",
+  points:["Position matters more than effort","Build systems, not moving targets; automate saving","Smart people over-trade; fewer, better decisions","Income is not ownership: use today's pay to buy tomorrow's freedom","Protect before you display; build what runs without you"]},
+ {id:"ep3", file:"listen-3.mp3", title:"Master Your Shadow Self Through Solitude", topic:"Jung · Solitude", dur:"8 min", src:"Master your shadow self through solitude",
+  summary:"Carl Jung's persona, shadow and integration: using deliberate solitude to meet yourself and come back steadier.",
+  points:["The persona is a tool, not your identity","Solitude as a laboratory: approval, empty space, discomfort","Meet the shadow with questions, not shame","Integration turns anger into boundaries and ambition into direction","Retreat and return as a lifelong rhythm"]},
+ {id:"ep4", file:"listen-4.mp3", title:"Make Them Think About You", topic:"Attraction", dur:"7 min", src:"Make them mentally obsessed with you",
+  summary:"How to stay on her mind honestly: impact over time, ending on a high, layers, healthy mystery and zero neediness.",
+  points:["Depth beats duration","Leave at the high point","Let her discover you over time","Mystery from a full life, never mixed signals","Warm but not needy"]},
+ {id:"ep5", file:"listen-5.mp3", title:"Become Obsessed With Your Appearance", topic:"Machiavelli · Presence", dur:"9 min", src:"Become obsessed with your appearance",
+  summary:"First impressions form in a tenth of a second. Make the way you look match the man you are, then build a standard you never drop below.",
+  points:["Thin slicing: people judge in seconds, then look for proof","Look intentional, not rich: fit and grooming beat price","Beau Brummell: style opens doors, only substance keeps them open","Halo and horn effects: remove easy reasons to be underestimated","Posture, eye contact and calm movement say it before you speak","Keep a daily standard, not an occasion-only effort"]},
+ {id:"ep6", file:"listen-6.mp3", title:"7 Dark Psychology Rules", topic:"Machiavelli · Clarity", dur:"10 min", src:"7 dark Psychology rules",
+  summary:"Seven rules that make you very hard to manipulate: read patterns, motives and silence, stay calm, and trust your own judgment.",
+  points:["Judge actions, not words: trust is earned by patterns","Ask what someone is chasing or protecting","Let silence work in talks and negotiations","Be hard to read: respond in five minutes, not five seconds","Two columns: what you feel vs what you know","Guard your mornings, nights and inputs","Be willing to stand alone when the evidence says so"]},
+ {id:"ep7", file:"listen-7.mp3", title:"How to Spot Real People", topic:"Machiavelli · Character", dur:"10 min", src:"How to spot real people in a world of fakes",
+  summary:"Seven moments where real character shows: what they want, how they treat others, your wins, disagreement, mistakes, gossip and time.",
+  points:["Ask why they like you: would they stay if you had nothing to offer?","Watch how they treat the waiter","Your success reveals envy or real support","Secure people disagree without making it personal","Owning mistakes beats never making them","How they talk about absent people previews how they'll talk about you","Charm wins first impressions; only character survives time"]},
+ {id:"ep8", file:"listen-8.mp3", title:"10 Tricks to Control Any Situation", topic:"Machiavelli · Control", dur:"10 min", src:"10 tricks to control any situation",
+  summary:"Ten moves from The Prince: how each one gets used on you, how to spot it, and the honest version you can use yourself.",
+  points:["Who told me this, and what do they gain?","Be load-bearing through real value","Silence and pace: refuse false urgency","Let people own good ideas; question how options are framed","Praise honestly; notice praise that arrives with a request","Push past false choices: real choice includes no","Build options so you never need to beg"]},
+ {id:"ep9", file:"listen-9.mp3", title:"8 Ruthless Truths That Make You Dangerously Intelligent", topic:"Machiavelli · Strategy", dur:"9 min", src:"8 ruthless truths that make you dangerously intelligent",
+  summary:"Eight traits of strategic intelligence, used for protection and clarity: share selectively, care without clinging, listen deeper and focus on outcomes.",
+  points:["Share selectively; save depth for those who earn it","Adapt your style, never your values","Care without clinging: build options","Quiet leverage: add value, let it speak","Listen for the need behind the words","Decide your ethical lines in advance","Control your exposure, online and off","Be stubborn on goals, flexible on methods"]},
+ {id:"ep10", file:"listen-10.mp3", title:"If They Play Dirty, Outsmart Them Mentally", topic:"Machiavelli · Defence", dur:"9 min", src:"If they play dirty, outsmart them mentally",
+  summary:"Ten principles for dealing with people who act in bad faith: stay readable only to those who earn it, explain less, enforce boundaries and walk away from rigged games.",
+  points:["Kind is fine; being completely readable is the risk","Explain briefly, then stop: no is a full sentence","Watch the setup: timing, audience and labels","Fairness needs calm, proportional consequences","Refuse false urgency: let me think about it","Anchor your identity privately","Steady values, intentional access; never hot and cold","Walk away from games built to drain you"]},
+ {id:"ep11", file:"listen-11.mp3", title:"The Shocking Cost of Goodness", topic:"Machiavelli · Goodness", dur:"8 min", src:"The shocking cost of goodness",
+  summary:"Why blind kindness drains you, and how to stay genuinely good with boundaries, judgment and the strength to make it count.",
+  points:["Kindness isn't the weakness; no boundaries is","Give by choice, not by default","Be genuinely good, firm when it matters: never fake it","Put your own oxygen mask on first","Three questions before every yes","Nice avoids conflict; good resolves it","Be a shepherd: neither sheep nor wolf"]},
+ {id:"ep12", file:"listen-12.mp3", title:"Stop Acting Nice, Start Playing Smart", topic:"Machiavelli · Respect", dur:"8 min", src:"Stop acting nice - Start play smart",
+  summary:"Seven shifts from approval seeker to someone people respect, without losing your warmth or your values.",
+  points:["Stay steady through necessary tension","Let approval be optional","Respond, don't react: pause before you answer","Give kindness with intention; reduce access calmly","Explain briefly, then stop","Notice who is investing more effort","Ask: what does this reaction teach people about me?"]}
+];
+const LS = { cur:null, playing:false };
+let lsPos = {}, lsDone = {};
+try{ lsPos = JSON.parse(localStorage.getItem("asad-listen-pos")||"{}"); lsDone = JSON.parse(localStorage.getItem("asad-listen-done")||"{}"); }catch(e){}
+const fmtT = s => { s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+":"+String(s%60).padStart(2,"0"); };
+const PLAYER = () => $("player");
+function saveListen(){ try{ localStorage.setItem("asad-listen-pos",JSON.stringify(lsPos)); localStorage.setItem("asad-listen-done",JSON.stringify(lsDone)); }catch(e){} }
+function playEp(id){
+  const ep = EPISODES.find(e=>e.id===id); if(!ep) return; const a=PLAYER();
+  if(LS.cur!==id){ LS.cur=id; a.src=ep.file; a.load(); const start=lsPos[id]||0; if(start>5) a.addEventListener("loadedmetadata",()=>{ try{ a.currentTime=start; }catch(_){} },{once:true}); }
+  a.play().catch(()=>{ const m=$("lsMsg"); if(m) m.textContent="Couldn't play this session. Check your connection and try again."; });
+  if("mediaSession" in navigator){ try{ navigator.mediaSession.metadata = new MediaMetadata({title:ep.title, artist:"A$AD Protocol", album:"Listening sessions", artwork:[{src:"icon-512.png",sizes:"512x512",type:"image/png"}]});
+    navigator.mediaSession.setActionHandler("play",()=>a.play()); navigator.mediaSession.setActionHandler("pause",()=>a.pause());
+    navigator.mediaSession.setActionHandler("seekbackward",()=>{a.currentTime=Math.max(0,a.currentTime-15)}); navigator.mediaSession.setActionHandler("seekforward",()=>{a.currentTime=Math.min(a.duration||0,a.currentTime+15)}); }catch(_){} }
+}
+function playerUI(){
+  const a=PLAYER(), ep=EPISODES.find(e=>e.id===LS.cur);
+  const big=$("lsNow");
+  if(big){
+    if(!ep){ big.innerHTML=`<div class="ls-empty"><span class="lbl">Now playing</span><p>Pick a session below to start listening.</p></div>`; }
+    else{
+      const d=a.duration||0, t=a.currentTime||0;
+      big.innerHTML=`<div class="ls-head"><span class="lbl">Now playing · ${esc(ep.topic)}</span><h3>${esc(ep.title)}</h3></div>
+      <input type="range" class="ls-seek" id="lsSeek" min="0" max="${Math.max(1,Math.floor(d))}" step="1" value="${Math.floor(t)}" style="--v:${d?t/d*100:0}%" aria-label="Seek">
+      <div class="ls-time"><span id="lsT">${fmtT(t)}</span><span>-${fmtT(d-t)}</span></div>
+      <div class="ls-ctrl">
+        <button class="ls-b" data-lsskip="-15" aria-label="Back 15 seconds"><svg viewBox="0 0 24 24"><path d="M11 5 4 12l7 7"/><path d="M20 5l-7 7 7 7"/></svg><span>15</span></button>
+        <button class="ls-play" data-lstoggle="1" aria-label="${a.paused?"Play":"Pause"}">${a.paused?'<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>':'<svg viewBox="0 0 24 24"><path d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg>'}</button>
+        <button class="ls-b" data-lsskip="15" aria-label="Forward 15 seconds"><span>15</span><svg viewBox="0 0 24 24"><path d="M13 5l7 7-7 7"/><path d="M4 5l7 7-7 7"/></svg></button>
+        <button class="ls-rate" data-lsrate="1">${a.playbackRate}×</button>
+      </div><p class="note" id="lsMsg" aria-live="polite"></p>`;
+    }
+  }
+  const mini=$("miniPlayer");
+  if(mini){ const show = !!ep && S.view!=="listen" && !document.body.classList.contains("locked");
+    mini.hidden=!show; document.body.classList.toggle("has-mini", show);
+    if(show) mini.innerHTML=`<button class="mp-play" data-lstoggle="1" aria-label="${a.paused?"Play":"Pause"}">${a.paused?'<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>':'<svg viewBox="0 0 24 24"><path d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg>'}</button>
+      <button class="mp-title" data-go="listen"><span class="lbl">Listening</span><span class="mp-t">${esc(ep.title)}</span></button>
+      <span class="mp-time" id="mpT">${fmtT(a.currentTime)}</span>
+      <button class="mp-x" data-lsstop="1" aria-label="Stop"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>`; }
+}
+function vListen(){
+  const done = EPISODES.filter(e=>lsDone[e.id]).length;
+  return head("Listen","Listening sessions") + `<p class="intro">Audio sessions for your commute, the gym or a quiet evening. Each one is an original script built from the videos you shared, voiced so you can listen anywhere.</p>
+  <div class="ls-now hud-box" id="lsNow"></div>
+  <div class="view-head sub"><div><div class="mono">${EPISODES.length} sessions · ${done} finished</div><h2>Library</h2></div></div>
+  <div class="eps">${EPISODES.map((e,i)=>{ const p=lsPos[e.id]||0, on=LS.cur===e.id;
+    return `<article class="ep${on?" on":""}"><div class="ep-n">${String(i+1).padStart(2,"0")}</div><div class="ep-b">
+      <div class="row"><span class="tag">${esc(e.topic)}</span><span class="note">${e.dur}${lsDone[e.id]?" · ✓ Finished":p>5?" · Resume at "+fmtT(p):""}</span></div>
+      <h3>${esc(e.title)}</h3><p>${esc(e.summary)}</p>
+      <details><summary>Key takeaways</summary><ul>${e.points.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><p class="note">Inspired by the YouTube video "${esc(e.src)}". Script rewritten in original words.</p></details>
+      <div class="row"><button class="btn" data-lsplay="${e.id}">${on&&!PLAYER().paused?"Playing…":p>5&&!lsDone[e.id]?"Resume":"Play"}</button>${lsDone[e.id]?`<button class="del" data-lsreset="${e.id}">Mark as new</button>`:""}</div>
+    </div></article>`; }).join("")}</div>`;
+}
+(function wirePlayer(){
+  const a=PLAYER(); if(!a) return;
+  let lastSave=0;
+  a.addEventListener("timeupdate",()=>{ if(!LS.cur) return; lsPos[LS.cur]=a.currentTime;
+    if(a.duration && a.currentTime/a.duration>0.95) lsDone[LS.cur]=true;
+    if(Date.now()-lastSave>4000){ saveListen(); lastSave=Date.now(); }
+    const s=$("lsSeek"); if(s && document.activeElement!==s){ s.max=Math.max(1,Math.floor(a.duration||0)); s.value=Math.floor(a.currentTime); s.style.setProperty("--v",(a.duration?a.currentTime/a.duration*100:0)+"%"); }
+    const t=$("lsT"); if(t) t.textContent=fmtT(a.currentTime); const m=$("mpT"); if(m) m.textContent=fmtT(a.currentTime); });
+  ["play","pause","loadedmetadata","ratechange"].forEach(ev=>a.addEventListener(ev,()=>{ playerUI(); if(ev!=="loadedmetadata"&&S.view==="listen"){ document.querySelectorAll("[data-lsplay]").forEach(b=>{ b.textContent = (b.dataset.lsplay===LS.cur && !a.paused) ? "Playing…" : (lsPos[b.dataset.lsplay]>5&&!lsDone[b.dataset.lsplay]?"Resume":"Play"); }); } }));
+  a.addEventListener("ended",()=>{ lsDone[LS.cur]=true; lsPos[LS.cur]=0; saveListen(); if(S.view==="listen") render(); else playerUI(); });
+  a.addEventListener("error",()=>{ const m=$("lsMsg"); if(m) m.textContent="This session couldn't load. Check your connection and try again."; });
+  document.addEventListener("input",e=>{ if(e.target.id==="lsSeek"){ a.currentTime=+e.target.value; e.target.style.setProperty("--v",(a.duration?e.target.value/a.duration*100:0)+"%"); } });
+  document.addEventListener("click",e=>{ const t=e.target.closest("button"); if(!t) return;
+    if(t.dataset.lsplay){ e.stopPropagation(); if(LS.cur===t.dataset.lsplay && !a.paused) a.pause(); else playEp(t.dataset.lsplay); playerUI(); return; }
+    if(t.dataset.lstoggle){ e.stopPropagation(); if(a.paused) a.play().catch(()=>{}); else a.pause(); return; }
+    if(t.dataset.lsskip){ e.stopPropagation(); a.currentTime=Math.max(0,Math.min((a.duration||0),a.currentTime+(+t.dataset.lsskip))); return; }
+    if(t.dataset.lsrate){ e.stopPropagation(); const r=[1,1.25,1.5,0.75]; a.playbackRate=r[(r.indexOf(a.playbackRate)+1)%r.length]; return; }
+    if(t.dataset.lsstop){ e.stopPropagation(); a.pause(); saveListen(); LS.cur=null; a.removeAttribute("src"); a.load(); playerUI(); return; }
+    if(t.dataset.lsreset){ e.stopPropagation(); delete lsDone[t.dataset.lsreset]; lsPos[t.dataset.lsreset]=0; saveListen(); render(); return; }
+  }, true);
+  window.addEventListener("pagehide",saveListen);
+})();
 function vLibrary(){
   const segs=[["psych","Her psychology"],["comm","Communication"],["experts","Experts"]];
   const intro = {psych:"Five popular books on women's psychology and desire, with in-depth summaries, what each means for you, and an honest note on how reliable it is.",
@@ -2337,10 +2617,12 @@ function results(){
   const books = ALL_BOOKS.filter(([b])=>has(b.title)||has(b.author)||has(b.hook)||has(b.big)||(b.ideas||[]).some(([h,p])=>has(h)||has(p)));
   const sigs = [...READ.interest.map(x=>["go",x]),...READ.mixed.map(x=>["warn",x]),...READ.discomfort.map(x=>["stop",x]),...READ.textWarm.map(x=>["go",x]),...READ.textCool.map(x=>["stop",x])].filter(([c,x])=>has(x[0])||has(x[1]));
   const convs = CONVOS.filter(c=>has(c[2])||has(c[3])||has(c[5])||has(c[7])||c[6].some(has)).slice(0,12);
+  const minds = MIND.flatMap(t=>(t.points||[]).map((p,i)=>[t,p,i])).filter(([t,p])=>p.some(has)||has(t.name));
   const ints = INTIMACY.flatMap(t=>(t.points||[]).map((p,i)=>[t,p,i])).filter(([t,p])=>p.some(has)||has(t.name));
-  if(!lines.length&&!books.length&&!sigs.length&&!ints.length&&!convs.length) return `<div class="empty">Nothing matches "${esc(S.q)}". Try a shorter word.</div>`;
+  if(!lines.length&&!books.length&&!sigs.length&&!ints.length&&!convs.length&&!minds.length) return `<div class="empty">Nothing matches "${esc(S.q)}". Try a shorter word.</div>`;
   let h="";
   if(books.length) h+=`<h3 class="res-h">Library</h3><div class="books">${books.map(([b,s])=>bookBtn(b,s)).join("")}</div>`;
+  if(minds.length) h+=`<h3 class="res-h">Mindset</h3><div class="pts">${minds.slice(0,6).map(([t,p,i])=>pointCard(p,i)).join("")}</div>`;
   if(convs.length) h+=`<h3 class="res-h">Conversations</h3><div class="grid">${convs.map(convoCard).join("")}</div>`;
   if(ints.length) h+=`<h3 class="res-h">Intimacy</h3><div class="pts">${ints.slice(0,8).map(([t,p,i])=>pointCard(p,i)).join("")}</div>`;
   if(sigs.length) h+=`<h3 class="res-h">Signals</h3><div class="rules">${sigs.map(([c,x])=>sig(c,x)).join("")}</div>`;
@@ -2375,9 +2657,10 @@ function closeSheet(){ $("sheetRoot").innerHTML=""; document.body.style.overflow
 /* ---- render ---- */
 function render(){
   $("tabbar").innerHTML = TABS.map(([id,n,ic])=>`<button class="tab" data-go="${id}" ${S.view===id?'aria-current="page"':''}><svg viewBox="0 0 24 24" aria-hidden="true">${ic}</svg>${n}</button>`).join("");
-  const map={home:vHome,texts:vTexts,read:vRead,intimacy:vIntimacy,her:vHer,library:vLibrary,vault:vVault,search:vSearch};
+  const map={home:vHome,texts:vTexts,read:vRead,intimacy:vIntimacy,mind:vMind,listen:vListen,her:vHer,library:vLibrary,vault:vVault,search:vSearch};
   $("view").innerHTML = map[S.view]();
   if(typeof renderShell==="function") renderShell();
+  if(typeof playerUI==="function") playerUI();
   if(S.view==="her" && S.herId && S.herTab==="profile") loadGallery();
   document.querySelectorAll(".chips").forEach(row=>{ const on=row.querySelector('[aria-pressed="true"]'); if(on && row.scrollWidth>row.clientWidth) row.scrollLeft = Math.max(0, on.offsetLeft - row.offsetLeft - 16); });
   if(S.view==="search"){ const q=$("q"); if(q){ q.focus(); q.setSelectionRange(q.value.length,q.value.length);} }
@@ -2429,6 +2712,7 @@ document.addEventListener("click", e=>{
   if(t.dataset.rchip){ S.readChip=t.dataset.rchip; changed=true; }
   if(t.dataset.seg){ S.libSeg=t.dataset.seg; changed=true; }
   if(t.dataset.ichip){ S.intChip=t.dataset.ichip; changed=true; }
+  if(t.dataset.mchip){ S.mindChip=t.dataset.mchip; changed=true; }
   if(t.dataset.go){ go(t.dataset.go); return; }
   if(changed){ render(); if(t.dataset.top) window.scrollTo({top:0}); }
 });
@@ -2524,6 +2808,8 @@ const ICON = {
   intimacy:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
   her:'<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.5 4.5-7 8-7s7 2.5 8 7"/>',
   library:'<path d="M4 4h5v16H4zM10 4h5v16h-5z"/><path d="m16 5 4 1-3 14-4-1"/>',
+  mind:'<path d="M4 21h16M6 18h12M7 18V9M12 18V9M17 18V9M4 9h16L12 3z"/>',
+  listen:'<path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="5" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/>',
   vault:'<rect x="4" y="5" width="16" height="15" rx="1.5"/><circle cx="12" cy="12" r="3"/><path d="M8 5V3h8v2"/>',
   search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',
   lock:'<rect x="5" y="11" width="14" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
@@ -2542,24 +2828,26 @@ try{ if(localStorage.getItem("asad-noside")==="1") document.getElementById("app"
 function navTargets(){
   const T = [];
   T.push({g:"Home", label:"Home", attrs:'data-go="home"', on:S.view==="home", icon:"home"});
+  T.push({g:"Listen", label:"Listening sessions", n:EPISODES.length, attrs:'data-go="listen"', on:S.view==="listen", icon:"listen"});
   T.push({g:"Talk", label:"Core Code", sub:"Texts", attrs:'data-go="texts" data-chip="core"', on:S.view==="texts"&&S.talkSeg==="texts"&&S.textChip==="core"});
   MODULES.forEach(m=>T.push({g:"Talk", sub:"Texts", label:m.name, n:m.lines.length, attrs:`data-go="texts" data-chip="${m.id}"`, on:S.view==="texts"&&S.talkSeg==="texts"&&S.textChip===m.id}));
   T.push({g:"Talk", sub:"Conversations", label:"All conversations", n:CONVOS.length, attrs:'data-go="texts" data-tseg="convos" data-phase="all"', on:S.view==="texts"&&S.talkSeg==="convos"&&S.phase==="all"});
   PHASES.forEach(([id,n])=>T.push({g:"Talk", sub:"Conversations", label:n, n:CONVOS.filter(c=>c[1]===id).length, attrs:`data-go="texts" data-tseg="convos" data-phase="${id}"`, on:S.view==="texts"&&S.talkSeg==="convos"&&S.phase===id}));
   READ_CHIPS.forEach(([id,n])=>T.push({g:"Read Her", label:n, attrs:`data-go="read" data-rchip="${id}"`, on:S.view==="read"&&S.readChip===id}));
   INTIMACY.forEach(t=>T.push({g:"Intimacy", label:t.name, attrs:`data-go="intimacy" data-ichip="${t.id}"`, on:S.view==="intimacy"&&S.intChip===t.id}));
+  MIND.forEach(m=>T.push({g:"Mindset", label:m.name, attrs:`data-go="mind" data-mchip="${m.id}"`, on:S.view==="mind"&&S.mindChip===m.id}));
   T.push({g:"Her", label:"Pipeline", n:profiles.length, attrs:'data-pipeline="1"', on:S.view==="her"&&!S.herId});
   profiles.forEach(p=>T.push({g:"Her", label:p.name||"Unnamed", attrs:`data-her="${p.id}"`, on:S.view==="her"&&S.herId===p.id, kind:"Profile"}));
   LIB_SEGS.forEach(([id,n])=>T.push({g:"Library", label:n, n:LIB[id].length, attrs:`data-go="library" data-seg="${id}"`, on:S.view==="library"&&S.libSeg===id}));
   T.push({g:"Vault", label:"My Vault", n:vault.length, attrs:'data-go="vault"', on:S.view==="vault", icon:"vault"});
   return T;
 }
-const TREE_GROUPS = [["Talk","talk","texts"],["Read Her","read","read"],["Intimacy","intimacy","intimacy"],["Her","her","her"],["Library","library","library"]];
+const TREE_GROUPS = [["Talk","talk","texts"],["Read Her","read","read"],["Intimacy","intimacy","intimacy"],["Mindset","mind","mind"],["Her","her","her"],["Library","library","library"]];
 function navTree(){
   const T = navTargets();
   const item = t => `<button class="ti" ${t.attrs} ${t.on?'aria-current="page"':""}>${t.icon?svgI(t.icon):""}<span class="tl">${esc(t.label)}</span>${t.n!==undefined?`<span class="tn">${t.n}</span>`:""}</button>`;
   const grp = (key,label,inner,open) => `<details data-k="${key}" ${open?"open":""}><summary>${label}</summary><div class="kids">${inner}</div></details>`;
-  let h = `<div class="tree-label">Workspace</div>` + item(Object.assign(T[0],{icon:"home"})).replace('class="ti"','class="ti top"');
+  let h = `<div class="tree-label">Workspace</div>` + item(Object.assign(T[0],{icon:"home"})).replace('class="ti"','class="ti top"') + item(T.find(t=>t.g==="Listen")).replace('class="ti"','class="ti top"');
   TREE_GROUPS.forEach(([g,key,view])=>{
     const items = T.filter(t=>t.g===g);
     let inner;
@@ -2585,6 +2873,8 @@ function crumbs(){
   if(S.view==="her"){ const p=curP(); C.push(["Her",'data-pipeline="1"']);
     if(p){ C.push([p.name||"Unnamed",`data-her="${p.id}"`]); C.push([{tracker:"Tracker",profile:"Profile",revival:"Revival",read:"Her read"}[S.herTab]||""]); } else C.push(["Pipeline"]); }
   if(S.view==="library"){ C.push(["Library",'data-go="library"']); C.push([(LIB_SEGS.find(x=>x[0]===S.libSeg)||[0,""])[1]]); }
+  if(S.view==="mind"){ C.push(["Mindset",'data-go="mind"']); C.push([(MIND.find(x=>x.id===S.mindChip)||{name:""}).name]); }
+  if(S.view==="listen"){ C.push(["Listen"]); }
   if(S.view==="vault") C.push(["My Vault"]);
   if(S.view==="search") C.push(["Search"]);
   return C.map((c,i)=> i===C.length-1 ? `<span class="cur">${esc(c[0])}</span>` : `<button ${c[1]||""} class="${i<C.length-2?"hide-sm":""}">${esc(c[0])}</button><span class="sep ${i<C.length-2?"hide-sm":""}">/</span>`).join("");
@@ -2593,11 +2883,13 @@ function renderShell(){
   const tr=$("tree"); if(tr){ const st=tr.scrollTop; tr.innerHTML=navTree(); tr.scrollTop=st; }
   const cr=$("crumbs"); if(cr) cr.innerHTML=crumbs();
   const rib=$("ribbon"); if(rib) rib.innerHTML = TABS.map(([id,n])=>`<button class="rb" data-go="${id}" title="${n}" aria-label="${n}" ${S.view===id?'aria-current="page"':''}>${svgI(id)}</button>`).join("")
+    + `<button class="rb" data-go="listen" title="Listen" aria-label="Listen" ${S.view==="listen"?'aria-current="page"':''}>${svgI("listen")}</button>`
+    + `<button class="rb" data-go="mind" title="Mindset" aria-label="Mindset" ${S.view==="mind"?'aria-current="page"':''}>${svgI("mind")}</button>`
     + `<button class="rb" data-go="vault" title="My Vault" aria-label="My Vault" ${S.view==="vault"?'aria-current="page"':''}>${svgI("vault")}</button><span class="sp"></span>`
     + `<button class="rb" data-palette="1" title="Search or jump to (Ctrl K)" aria-label="Search or jump to">${svgI("search")}</button>`
     + `<button class="rb" data-themebtn="1" title="Light or dark" aria-label="Switch light or dark mode"><svg class="sun" viewBox="0 0 24 24">${ICON.sun}</svg><svg class="moon" viewBox="0 0 24 24">${ICON.moon}</svg></button>`
     + `<button class="rb" data-lockapp="1" title="Lock" aria-label="Lock app">${svgI("lock")}</button>`;
-  const stt=$("status"); if(stt){ const act=profiles.filter(p=>!p.outcome).length; stt.innerHTML=`<span><b>●</b> Local & private</span><span>${act} active</span><span>${allLines().length} lines</span><span>${CONVOS.length} conversations</span><span>v5.0</span>`; }
+  const stt=$("status"); if(stt){ const act=profiles.filter(p=>!p.outcome).length; stt.innerHTML=`<span><b>●</b> Local & private</span><span>${act} active</span><span>${allLines().length} lines</span><span>${CONVOS.length} conversations</span><span>v5.2</span>`; }
 }
 function setSide(open){ SHELL.sideOpen=open; $("side").classList.toggle("open",open); $("sideScrim").classList.toggle("on",open); }
 const isDesk = () => matchMedia("(min-width:1000px)").matches;
@@ -2613,7 +2905,7 @@ function palItems(q){
   T.push({k:"Action", label:"Lock the app", attrs:'data-lockapp="1"'});
   T.push({k:"Action", label:"Switch light or dark mode", attrs:'data-themebtn="1"'});
   const match = t => words.every(w=>(t.k+" "+t.label).toLowerCase().includes(w));
-  let out = words.length ? T.filter(match) : T.filter(t=>["Home","Talk","Read Her","Intimacy","Her","Library","Vault"].includes(t.k)).slice(0,14);
+  let out = words.length ? T.filter(match) : T.filter(t=>["Home","Listen","Talk","Read Her","Intimacy","Mindset","Her","Library","Vault"].includes(t.k)).slice(0,14);
   if(words.length) out.unshift({k:"Search", label:`Search all content for “${q}”`, attrs:`data-go="search" data-q="${esc(q)}"`});
   return out.slice(0,40);
 }
