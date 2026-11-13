@@ -1,0 +1,944 @@
+{
+ "manipulationTactics": [
+  {
+   "n": 1,
+   "title": "Mirror Effect",
+   "summary": "Subtly imitating someone’s body language, speech or emotional state so they feel connected to you.",
+   "how": "Mirror neurons make familiarity read as similarity and trust. Match posture, pace, tone, word choice and mood, subtly and a moment later.",
+   "where": "Sales, negotiation, therapy, networking and dating. Con artists mirror interests and opinions to build false trust, then exploit it.",
+   "counter": "Be wary of anyone who mirrors you too perfectly, too quickly, or whose personality shifts with whoever they are talking to."
+  },
+  {
+   "n": 2,
+   "title": "Foot in the Door Technique",
+   "summary": "Get a yes to a small request first, and a bigger request becomes far more likely to succeed.",
+   "how": "Commitment and consistency. After a small yes, people see themselves as someone who supports the idea, so refusing later feels inconsistent.",
+   "where": "Petitions before donations, free trials, trying on the jacket, small favours at work. Cults, scams and controlling partners escalate step by step.",
+   "counter": "Notice requests that keep growing. Ask whether you want this or are just staying consistent. You can say no at any stage."
+  },
+  {
+   "n": 3,
+   "title": "Door in the Face Technique",
+   "summary": "Open with a deliberately oversized request, expect a no, then make the smaller request that was the goal all along.",
+   "how": "Contrast makes the second ask look modest, and reciprocity makes people want to meet you halfway after refusing.",
+   "where": "A $500 ask then $20, a 20% raise then 10%. A controlling partner forbids going out, then “allows” it under strict conditions.",
+   "counter": "Treat an absurd first ask as a setup. Judge the second request on its own merits, not against the first."
+  },
+  {
+   "n": 4,
+   "title": "The Zeigarnik Effect",
+   "summary": "Unfinished tasks and unresolved experiences stay in the mind far longer than completed ones.",
+   "how": "The brain holds open loops with a sense of urgency, creating tension that pushes for closure. Named after psychologist Bluma Zeigarnik.",
+   "where": "Cliffhangers and binge-watching, curiosity headlines, “find out more inside” offers, replaying an unfinished argument.",
+   "counter": "Close loops on purpose: write tasks down and reframe what is unresolved. Use it well by simply starting, and by stopping mid-task."
+  },
+  {
+   "n": 5,
+   "title": "Guilt Tripping",
+   "summary": "Making someone feel guilty or responsible so they comply, instead of asking directly for what you want.",
+   "how": "The guilt-tripper plays the victim and exploits the need to be seen as a good person, so saying no feels cruel or selfish.",
+   "where": "“After everything I’ve done for you…” “If you really loved me, you’d call more.” “I thought you were a team player.”",
+   "counter": "Acknowledge the feeling without accepting the guilt: “I understand you’re upset, but I have to do what’s best for me.”"
+  },
+  {
+   "n": 6,
+   "title": "Triangulation",
+   "summary": "Pulling a third person into a conflict or relationship to gain control, create division or stir jealousy.",
+   "how": "Instead of dealing with you directly, the manipulator controls how information flows, keeping everyone unsure of where they stand.",
+   "where": "“My ex always understood me better.” A manager praising John to shame you. Selective gossip. A parent comparing siblings.",
+   "counter": "Insist on direct, one-to-one communication. Treat comparisons as a tactic, not a measure of your worth, and step out of the triangle."
+  },
+  {
+   "n": 7,
+   "title": "The Silent Treatment",
+   "summary": "Deliberately ignoring someone or withholding communication as punishment, control or coercion.",
+   "how": "It exploits the need for connection. Social rejection activates the same brain regions as physical pain, so the target scrambles to fix things.",
+   "where": "A partner going cold after a disagreement, a parent withholding attention, a boss or coworker freezing someone out.",
+   "counter": "Healthy silence is for reflection; manipulative silence is for control. Don’t chase validation. Say you won’t accept withholding as a weapon."
+  },
+  {
+   "n": 8,
+   "title": "Illusory Truth Effect",
+   "summary": "People start believing false information simply because they have heard it repeatedly.",
+   "how": "The brain uses familiarity as a shortcut for credibility. Repeated statements are processed more easily, so they feel valid.",
+   "where": "Repeated political claims, slogans and jingles, rumours and gossip, a partner repeating that you are incapable or unlovable.",
+   "counter": "Remind yourself that repetition is not truth. Check the source, credibility and evidence, and cross-check with multiple sources."
+  },
+  {
+   "n": 9,
+   "title": "Gaslighting",
+   "summary": "Distorting the truth and denying events so the target doubts their own memory, perception and reality.",
+   "how": "The manipulator controls the narrative, shifts goalposts and isolates the target until they depend on the manipulator’s version of events.",
+   "where": "“That never happened.” “You’re too sensitive.” “Everyone else agrees with me.” “I never said that deadline was next week.”",
+   "counter": "Keep written records and saved messages, check with a trusted friend, and refuse to debate reality with someone who keeps distorting it."
+  },
+  {
+   "n": 10,
+   "title": "Time Pressure",
+   "summary": "Creating a false sense of urgency so people make rushed decisions without thinking critically.",
+   "how": "Under stress, emotional and instinctive responses override rational thinking, and people grab short-term relief over long-term benefit.",
+   "where": "Flash sales. “We need an answer by end of day.” “Decide by next week or I’ll assume you don’t care.” Account-lock scams.",
+   "counter": "Ask whether the urgency is real or manufactured. Say “I need time to think about this”, or walk away until you have weighed your options."
+  },
+  {
+   "n": 11,
+   "title": "Anchoring Bias",
+   "summary": "Relying too heavily on the first piece of information received, so every later judgment is compared to it.",
+   "how": "Tversky and Kahneman showed that even a random number from a spun wheel shifted people’s estimates. Once set, an anchor is hard to adjust away from.",
+   "where": "“Was $200, now $79.” Inflated house listings, lowball salary offers, huge lawsuit demands, inflated early claims of status.",
+   "counter": "Question the first number, do your own research, and in negotiations be the one who sets the first figure."
+  },
+  {
+   "n": 12,
+   "title": "False Scarcity",
+   "summary": "Creating the illusion that something is rare or running out, to push people into rushed decisions.",
+   "how": "It triggers FOMO and an old survival instinct: when something seems scarce we value it more and stop weighing options rationally.",
+   "where": "“Only two left in stock.” Limited editions and waitlists. “Many candidates want this job.” Constantly hinting at other suitors.",
+   "counter": "Ask whether it is truly rare or made to look that way. Wait and check back. Real opportunities allow time to think."
+  },
+  {
+   "n": 13,
+   "title": "Framing Manipulation",
+   "summary": "Presenting the same information in a way that steers perception, emotion and decisions without outright lying.",
+   "how": "The brain reads language emotionally, through association and context, so wording and emphasis change the response while the facts stay the same.",
+   "where": "“95% fat-free” vs “contains 5% fat”. “Certified pre-owned.” “You save $30.” “I’m only tough on you because I care.”",
+   "counter": "Ask if this is the full picture. Rephrase it another way, compare sources, and challenge anything presented as your only option."
+  },
+  {
+   "n": 14,
+   "title": "Social Proof Exploitation",
+   "summary": "Pushing people to conform because others appear to be doing, buying or believing the same thing.",
+   "how": "Following the group was once a survival instinct, so in uncertain moments we still look to others for guidance.",
+   "where": "Fake reviews and bestseller tags. “This house has multiple offers.” “Everyone thinks you’re overreacting.” “That’s how we do things here.”",
+   "counter": "Ask whether it is the best choice or just the popular one. Look for real evidence: popularity does not equal truth."
+  },
+  {
+   "n": 15,
+   "title": "Cognitive Dissonance",
+   "summary": "The discomfort of holding conflicting beliefs, or acting against your values, which the brain rushes to resolve.",
+   "how": "To restore consistency people justify, shift blame or change beliefs rather than admit fault, which locks them into past decisions.",
+   "where": "“If you truly value success, you drive this car.” Cult followers excusing contradictions. Victims rationalising a partner’s cruelty.",
+   "counter": "When you feel defensive, ask: am I resisting this because it is false, or because it contradicts what I want to believe?"
+  },
+  {
+   "n": 16,
+   "title": "Repetition Hypnosis",
+   "summary": "Repeating phrases or ideas so often that they bypass critical thinking and settle into the subconscious.",
+   "how": "Repetition strengthens neural pathways. Easier recall feels like familiarity, and familiarity gets mistaken for truth.",
+   "where": "Slogans and jingles, political catchphrases, chants and doctrine, “no one else will ever love you”, social media echo chambers.",
+   "counter": "Ask: do I believe this because it is true, or because I have heard it a thousand times? Diversify your information sources."
+  },
+  {
+   "n": 17,
+   "title": "Priming",
+   "summary": "Exposure to a cue shapes someone’s later thoughts, behaviour and decisions without them realising it.",
+   "how": "The brain is associative: introduce a concept and related ideas activate. See “yellow” and you are more likely to name “banana”.",
+   "where": "Store music, colours and scents. Loaded media word choices. “You’ve always been such a generous person” right before a favour.",
+   "counter": "Ask what you saw or heard just before deciding, and separate your own view from one that was planted in advance."
+  },
+  {
+   "n": 18,
+   "title": "Overloading with Information",
+   "summary": "Bombarding someone with data, choices or accusations until they can no longer think critically.",
+   "how": "Cognitive overload causes decision fatigue, so the mind falls back on shortcuts: authority, emotion or the easiest option.",
+   "where": "Dense contracts and terms, endless financing options, floods of headlines, several accusations thrown at once in an argument.",
+   "counter": "Ask what the core issue is. Break it into parts, slow down, ask for clarification and get a second opinion."
+  },
+  {
+   "n": 19,
+   "title": "Ben Franklin Effect",
+   "summary": "Someone who has done you a small favour is more likely to do another, and to like you more for it.",
+   "how": "Cognitive dissonance: “I helped them, so I must like them.” Franklin won over a rival by borrowing a rare book and thanking him.",
+   "where": "Small asks in negotiation, surveys and free samples, asking for advice or to borrow a pen. Scammers escalate the favours over time.",
+   "counter": "Watch for small favours that keep growing, and check whether the relationship is genuine or conditioning you to comply."
+  },
+  {
+   "n": 20,
+   "title": "The Pygmalion Effect",
+   "summary": "High expectations lead to better performance: people rise, or sink, to what is expected of them.",
+   "how": "Rosenthal and Jacobson: randomly chosen “bloomers” outperformed peers because teachers gave them more attention. The reverse is the Golem effect.",
+   "where": "Managers, coaches and parents. Misused as “we believe in you, you’re leadership material” to extract effort with no reward.",
+   "counter": "Set high but realistic expectations and back them with support. Be wary of praise that never turns into anything real."
+  },
+  {
+   "n": 21,
+   "title": "Negative Reinforcement",
+   "summary": "Removing something unpleasant once a person complies, which strengthens the compliant behaviour.",
+   "how": "The brain links the action with relief, so it repeats it. People go a long way to escape discomfort, even against their own interests.",
+   "where": "Tantrums that stop when parents give in, silence until you yield, pressure that lifts after overtime, painful cancellation processes.",
+   "counter": "Ask: am I doing this because I want to, or to escape the consequences? Hold the boundary through the short-term discomfort."
+  },
+  {
+   "n": 22,
+   "title": "False Flattery",
+   "summary": "Excessive or insincere praise used to lower defences, create dependency or get something in return.",
+   "how": "Compliments feel good and drop your guard, making you more trusting and more willing to reciprocate. People rarely question praise.",
+   "where": "“You have such great taste.” Love bombing early in dating. “We’re a family here.” “You’re so generous, I know you’ll cover this bill.”",
+   "counter": "Does the praise arrive right before a request? Genuine compliments are specific and balanced. Knowing your own worth removes its pull."
+  },
+  {
+   "n": 23,
+   "title": "The Contrast Principle",
+   "summary": "Showing two options in succession so one looks much better, or worse, than it really is.",
+   "how": "The brain judges relatively, not absolutely: lukewarm water feels cool to a hand from hot water and warm to one from cold.",
+   "where": "The run-down house shown first. “Was $300, now $120.” Asking $800, then $500. Cruelty followed by relief that looks like kindness.",
+   "counter": "Ask: would this still look good if I had not seen the first option? Evaluate each choice on its actual value."
+  },
+  {
+   "n": 24,
+   "title": "Intermittent Reinforcement",
+   "summary": "Giving rewards, approval or affection unpredictably, which makes people chase them harder.",
+   "how": "Uncertain rewards create stronger anticipation than steady ones. It is the mechanism that keeps gamblers at slot machines.",
+   "where": "Social media likes and notifications, partners who run hot and cold, occasional praise at work, cult leaders, small scam “payouts”.",
+   "counter": "Ask: am I here for consistent rewards or for occasional validation? Healthy environments offer stability, not emotional whiplash."
+  },
+  {
+   "n": 25,
+   "title": "The Fear-Then-Relief Trick",
+   "summary": "Inducing fear or stress, then suddenly relieving it, to catch a person in a compliant moment.",
+   "how": "Fear narrows thinking to escape. When it lifts, the relief leaves the person suggestible and clinging to whoever offered it.",
+   "where": "Interrogators switching to kindness. “Pay now and we can fix this” scam calls. Worst-case insurance pitches. A fight, then sudden affection.",
+   "counter": "When panic hits, pause and breathe. Ask whether the fear was manufactured and whether the offered fix is really your best option."
+  },
+  {
+   "n": 26,
+   "title": "Reverse Psychology",
+   "summary": "Encouraging the opposite of what you want, knowing the other person will rebel into doing it.",
+   "how": "Reactance: people value autonomy and push back when their freedom to choose feels threatened, often to prove someone wrong.",
+   "where": "“I bet you can’t finish your broccoli.” “Not for everyone” branding. “I know you’re too busy for me.” “I doubt you’re committed enough.”",
+   "counter": "When a remark triggers defiance, pause and ask: do I truly want this, or do I just feel the need to prove something?"
+  },
+  {
+   "n": 27,
+   "title": "Planned Vulnerability",
+   "summary": "Strategically revealing weaknesses or struggles to win trust, sympathy or control.",
+   "how": "Reciprocity: when someone opens up we feel compelled to match it, which creates fast intimacy and an emotional debt.",
+   "where": "A heavy trauma story very early in dating. A boss “under so much pressure”. A scammer’s “I’ve made mistakes in the past”.",
+   "counter": "Notice if the struggles surface whenever they need something. Offer compassion without obligation: it is not yours to fix."
+  },
+  {
+   "n": 28,
+   "title": "Guilt Seeding",
+   "summary": "Planting small, indirect remarks that slowly make someone feel responsible, or that they owe you.",
+   "how": "Subtler than guilt tripping. There is no direct accusation to challenge, so the remarks linger and the target overcompensates.",
+   "where": "“It’s fine, I’m just used to doing things alone.” “Must be nice to have time off.” “You probably don’t even miss me when I’m gone.”",
+   "counter": "Name the pattern: “I understand how you feel, but I won’t take responsibility for something I haven’t done.”"
+  },
+  {
+   "n": 29,
+   "title": "False Consensus Effect",
+   "summary": "Making you believe an opinion, behaviour or decision is widely accepted when it may not be.",
+   "how": "People want social validation. Feeling like the minority raises self-doubt and makes compliance more likely.",
+   "where": "“Millions of customers can’t be wrong.” “Everyone is talking about this.” “We’ve all decided.” “Everyone would agree you’re overreacting.”",
+   "counter": "Ask: who exactly is “everyone”? Request proof, seek other perspectives and trust your own judgment."
+  },
+  {
+   "n": 30,
+   "title": "Forced Commitment",
+   "summary": "Pressuring someone into agreeing before they have had time to think, so that backing out later feels hard.",
+   "how": "The commitment and consistency principle: one small step creates pressure to keep going. In sales it is called the “yes ladder”.",
+   "where": "“Wouldn’t you love to drive this?” then a test drive. Free trials that need a card. “Just an extra 30 minutes today.” Cult recruitment.",
+   "counter": "Ask: would I still commit with more time to think? Refuse to decide under pressure: “I need time to think about this.”"
+  },
+  {
+   "n": 31,
+   "title": "Deliberate Misinterpretation",
+   "summary": "Intentionally twisting your words, ideas or intentions so you look wrong, guilty or unreasonable.",
+   "how": "People rush to correct misunderstandings, so the target ends up defending things they never said while the manipulator steers.",
+   "where": "“We should save more this year.” “So now I’m irresponsible?” “I need some alone time.” “So you don’t love me anymore?”",
+   "counter": "Don’t rush to defend. “That’s not what I said. Let’s focus on what I actually meant.” Clarify once, then stop justifying."
+  },
+  {
+   "n": 32,
+   "title": "Confession Triggers",
+   "summary": "Subtly pressuring or tricking someone into revealing private information or admitting guilt.",
+   "how": "People seek relief from accusation and tension, so they over-explain or confess when confessing is made to feel like the safest choice.",
+   "where": "“We already know what happened.” “I’ve been hearing things about you.” Long silences after a vague accusation. Fake “suspicious activity” calls.",
+   "counter": "Stay calm and ask “What exactly are you referring to?” Don’t over-explain. A vague “I already know” is usually a bluff."
+  },
+  {
+   "n": 33,
+   "title": "Pacing and Leading",
+   "summary": "First mirror someone’s emotions, behaviour or views, then gradually guide them towards a chosen outcome.",
+   "how": "Once people feel understood they accept guidance. A run of true, agreed statements makes the next suggestion easier to accept.",
+   "where": "“I completely understand… that’s why most customers take this offer.” Rally speeches. Hypnosis. “Since we trust each other, no phone passwords.”",
+   "counter": "Notice mirroring that is followed by steering. Ask: am I being guided to this decision, or am I choosing it myself?"
+  },
+  {
+   "n": 34,
+   "title": "The Decoy Effect",
+   "summary": "Adding a less attractive third option so the option the seller wants looks like the obvious choice.",
+   "how": "The brain struggles with absolute value but is good at comparison, so a well-placed decoy makes one choice stand out.",
+   "where": "Coffee at $3 small, $5.50 medium, $6 large. Subscription tiers. An extreme policy proposal. The overpriced house shown first.",
+   "counter": "Ask: would I have considered this if the third option did not exist? Judge each option on its own merit."
+  },
+  {
+   "n": 35,
+   "title": "False Equivalence",
+   "summary": "Presenting two things as equal or comparable when in reality they are not.",
+   "how": "We are drawn to symmetry and fairness and assume both sides have merit, which forces false dilemmas and needless compromise.",
+   "where": "“My opponent isn’t perfect either.” An expert versus an unqualified sceptic. “We both made mistakes” after cheating. “All businesses cut corners.”",
+   "counter": "Ask: are these equal in impact, scale and intent? Point out the key differences and refuse the false comparison."
+  }
+ ],
+ "darkConversationHacks": [
+  {
+   "n": 1,
+   "title": "Reciprocity Pressure",
+   "summary": "Turning kindness into a silent debt, so you feel you must repay it.",
+   "how": "We are taught that good people reciprocate, so even a small, unwanted gesture creates discomfort until it is repaid, often far beyond its value.",
+   "looks": "Free samples you feel bad walking away from. A colleague who helps once, then expects your silence. Support that later demands loyalty."
+  },
+  {
+   "n": 2,
+   "title": "Social Proof Bluff",
+   "summary": "An illusion of popularity designed to make you doubt your own judgment.",
+   "how": "The need to belong reads other people’s approval as validation. Once you think others have already decided, you stop asking questions and conform.",
+   "looks": "Fake testimonials, inflated follower counts, “everyone’s doing it”. The thought it plants: “Am I the only one who doesn’t see it?”"
+  },
+  {
+   "n": 3,
+   "title": "False Scarcity",
+   "summary": "Manufacturing urgency by pretending something is running out when it isn’t.",
+   "how": "Fear of loss narrows the mind and kills hesitation. The more fleeting something seems, the more precious it feels, and logic stops mattering.",
+   "looks": "“Only two left.” “Offer ends tonight.” “Limited seats available.” In relationships: chasing people who withhold attention or threaten to leave."
+  },
+  {
+   "n": 4,
+   "title": "Authority Bluff",
+   "summary": "A performance of power or expertise that gets you to surrender your judgment.",
+   "how": "We are conditioned to obey perceived authority. Titles, jargon and a confident tone stand in for substance: the more confident the delivery, the less you question the content.",
+   "looks": "False experts selling certainty, domineering bosses, dropped names and borrowed prestige. They don’t argue; they simply declare."
+  },
+  {
+   "n": 5,
+   "title": "Manufactured Consensus",
+   "summary": "Making you believe everyone already agrees, even when no one really does.",
+   "how": "It persuades through pressure, not logic. Repetition, selective visibility and fabricated data simulate a collective voice, so resisting feels like rebellion.",
+   "looks": "Rigged polls, paid endorsements, identical praise in the comments, a meeting where silence is taken as agreement. “The people have spoken.”"
+  },
+  {
+   "n": 6,
+   "title": "Guilt Tripping",
+   "summary": "A weaponised appeal to your conscience that makes you feel responsible for someone else’s pain.",
+   "how": "It exploits your desire to be good, framing love and loyalty as debts. The guilt is imposed, not earned, and it bypasses logic entirely.",
+   "looks": "A sigh, withdrawn affection. “After all I’ve sacrificed, this is how you treat me?” “I guess I just care more than you do.”"
+  },
+  {
+   "n": 7,
+   "title": "Playing the Victim",
+   "summary": "A performance of helplessness that controls through guilt, sympathy and confusion.",
+   "how": "It weaponises empathy and deflects accountability: when confronted, the focus shifts from their actions to your reaction.",
+   "looks": "“I can’t believe you’d attack me after everything I’ve been through.” You end up apologising and walking on eggshells."
+  },
+  {
+   "n": 8,
+   "title": "Love Bombing",
+   "summary": "A storm of affection, attention and validation aimed at owning you rather than loving you.",
+   "how": "The intensity conditions you to link their attention with safety and worth. When it is suddenly withdrawn, you chase the high and blame yourself.",
+   "looks": "Constant compliments, endless messages, lavish gestures and promises of forever far too soon. Then criticism and coldness."
+  },
+  {
+   "n": 9,
+   "title": "Shame Tactics",
+   "summary": "Making you feel small or unworthy for not meeting someone else’s expectations.",
+   "how": "They threaten the need to feel accepted and disguise control as moral correction. Once shame takes root, obedience follows and you police yourself.",
+   "looks": "“You’re being selfish.” “I thought you were better than this.” “Everyone’s disappointed in you.”"
+  },
+  {
+   "n": 10,
+   "title": "Triangulation",
+   "summary": "Bringing a third party into a two-person dynamic to destabilise trust.",
+   "how": "The manipulator sits in the middle as a “neutral messenger”, stoking comparison and competition. Divided people are easier to control.",
+   "looks": "An ex mentioned just enough to spark jealousy, a boss comparing employees, gossip disguised as concern."
+  },
+  {
+   "n": 11,
+   "title": "Loaded Questions",
+   "summary": "Questions with an accusation or assumption buried inside, so any answer concedes something.",
+   "how": "Defend yourself and you validate the premise; deny it and you sound evasive. Either way the frame now belongs to them.",
+   "looks": "“Why are you so angry?” “When did you stop caring about this?” You feel compelled to explain, and every word tightens the trap."
+  },
+  {
+   "n": 12,
+   "title": "False Dichotomy",
+   "summary": "Forcing a choice between two extremes as if no other path exists.",
+   "how": "The brain craves simplicity and fears uncertainty. Once you are inside their frame, you stop questioning the frame itself.",
+   "looks": "“You’re either with us or against us.” “If you loved me, you’d do this.” “If you cared, you wouldn’t question me.”"
+  },
+  {
+   "n": 13,
+   "title": "Gaslighting",
+   "summary": "Twisting your perception until you no longer trust your own reality.",
+   "how": "Small denials and “corrections” chip away at certainty. A person who doubts their own perception depends on someone else’s version of the truth.",
+   "looks": "“That never happened.” “You’re overreacting.” “You always misunderstand me.” It often starts with affection and ends in isolation."
+  },
+  {
+   "n": 14,
+   "title": "Moving Goalposts",
+   "summary": "Shifting the rules or standards so you keep chasing approval that never comes.",
+   "how": "It runs on hope: meet the demand and the criteria change. Their calm disappointment makes the failure feel like yours.",
+   "looks": "What was good enough suddenly isn’t. Promotions and praise that never materialise. A partner whose standards shift like smoke."
+  },
+  {
+   "n": 15,
+   "title": "Straw Man Misrepresentation",
+   "summary": "Twisting your words into a weaker, uglier version that is easy to attack.",
+   "how": "They fight an imitation of your idea. Each clarification becomes new material to distort, and the simple, emotional version plays well to onlookers.",
+   "looks": "A nuanced point reframed as extreme. Disagreement recast as hostility. You are left desperate to explain what you really meant."
+  },
+  {
+   "n": 16,
+   "title": "Rapid-Fire Questioning",
+   "summary": "A barrage of questions delivered too fast for you to think.",
+   "how": "Speed keeps you reacting instead of reflecting. Pauses are treated as guilt, and the false urgency makes compliance feel like relief.",
+   "looks": "A boss peppering you until you break. A partner demanding explanations faster than you can breathe. You over-share or contradict yourself."
+  },
+  {
+   "n": 17,
+   "title": "Compassion Bait",
+   "summary": "A calculated display of vulnerability meant to hook your empathy.",
+   "how": "It makes you equate kindness with compliance. Saying no feels cruel, so you stop thinking critically and your boundaries dissolve.",
+   "looks": "Caught lying, they cry. Confronted, they collapse. When you try to leave, they crumble into desperation."
+  },
+  {
+   "n": 18,
+   "title": "Foot in the Door",
+   "summary": "Gaining compliance by starting with a small, innocent yes and escalating from there.",
+   "how": "We want to stay consistent with past choices, so refusing a slightly bigger favour feels like hypocrisy. Each concession resets what feels normal.",
+   "looks": "“Can you fill out this quick survey?” “One small favour?” “Just stay a little longer?” Then contracts, lost sleep and bent values."
+  },
+  {
+   "n": 19,
+   "title": "Door in the Face",
+   "summary": "An outrageous request first, so the real, smaller request feels like a fair compromise.",
+   "how": "You measure the second ask against the first, not on its merits. They engineered the refusal so that agreeing would feel like relief.",
+   "looks": "A boss demands a weekend of overtime, then “settles” for one extra day. A friend asks for a large loan, then a smaller one."
+  },
+  {
+   "n": 20,
+   "title": "Past Commitment Leverage",
+   "summary": "Using your history of loyalty, promises and sacrifices as a chain.",
+   "how": "It weaponises your wish to be consistent and honourable. The past is brought back like a ledger whenever you try to step back.",
+   "looks": "“After all I’ve done for you.” “You can’t quit now, you owe me.” Walking away is made to feel like betrayal."
+  },
+  {
+   "n": 21,
+   "title": "Hidden Terms",
+   "summary": "Conditions concealed in an agreement that only surface after you have said yes.",
+   "how": "Open control invites resistance; implied control slips by. You discover the cost when it feels too late to walk away, and you can’t argue with what was never said.",
+   "looks": "“Just this once” that becomes ongoing loyalty. “Flexibility” that means endless availability. “Understanding” that means obedience."
+  },
+  {
+   "n": 22,
+   "title": "Anchoring With Extremes",
+   "summary": "Presenting an exaggerated option first so everything after it seems moderate.",
+   "how": "The first thing you hear becomes your reference point. You end up chasing relief rather than fairness, and even knowing the trick doesn’t fully undo it.",
+   "looks": "An outrageous opening demand, a sky-high price before the “discount”, an impossible standard that makes lesser demands look reasonable."
+  },
+  {
+   "n": 23,
+   "title": "Weasel Words",
+   "summary": "Phrases that sound truthful while committing to almost nothing.",
+   "how": "Vague wording gives the speaker deniability, and the listener’s brain fills in specifics that were never stated.",
+   "looks": "“Experts say.” “Some people believe.” “It’s been suggested.” “Results may vary.” No names, no data, no accountability."
+  },
+  {
+   "n": 24,
+   "title": "Absolutist Language",
+   "summary": "All-or-nothing words that erase nuance and corner you.",
+   "how": "Sweeping claims leave no room to reason, so you chase exceptions to prove yourself. Over time it seeps into your own self-talk.",
+   "looks": "“You never listen.” “You always mess things up.” Always, never, everyone, no one, everything, nothing."
+  },
+  {
+   "n": 25,
+   "title": "Jargon Obfuscation",
+   "summary": "Hiding behind complexity so that asking what something means feels foolish.",
+   "how": "We equate complexity with credibility. People nod along rather than appear ignorant, and agree to things they barely understand.",
+   "looks": "Empty buzzwords in meetings, euphemism-heavy speeches, a direct question answered with a cloud of words."
+  },
+  {
+   "n": 26,
+   "title": "Euphemism / Minimization",
+   "summary": "Softening harsh truths with gentle words to dull their impact and disguise wrongdoing.",
+   "how": "We react to framing more than to facts. Softer language makes you second-guess your instincts until you minimise it too.",
+   "looks": "“Collateral damage.” “Restructuring.” Emotional torment called “a misunderstanding”. Soon you are repeating their phrases."
+  },
+  {
+   "n": 27,
+   "title": "Intimidating Proximity",
+   "summary": "Invading personal space to assert dominance without saying a word.",
+   "how": "Crowding triggers the body’s alarm response, so you concede to relieve the pressure. It is invisible to outsiders and easy to deny.",
+   "looks": "Leaning over your desk, blocking a doorway in an argument, stepping closer each time you retreat. “I was just standing here.”"
+  },
+  {
+   "n": 28,
+   "title": "Microaggressions",
+   "summary": "Small slights that chip away at your sense of worth while the speaker claims innocence.",
+   "how": "Each one is deniable on its own; together they wear you down. The exhaustion comes from constantly defending your right to feel hurt.",
+   "looks": "Jokes that aren’t funny, compliments that sting, a smirk or an exaggerated sigh. “You’re too sensitive.” “I was only joking.”"
+  },
+  {
+   "n": 29,
+   "title": "Controlled Environment",
+   "summary": "Scripting the setting, timing and flow of information so their version feels like the only one.",
+   "how": "Control is also about what you don’t hear: outside opinions are restricted and time to think is limited. The walls close in slowly, so it feels normal.",
+   "looks": "Closed-door meetings, selective inclusion, a partner who isolates you from friends “for your own good”."
+  },
+  {
+   "n": 30,
+   "title": "Threats to Record",
+   "summary": "Using the threat of recording to make you censor yourself.",
+   "how": "Fear of exposure does the work; they need not actually record. They cast themselves as the protector of transparency while using it to silence.",
+   "looks": "“I’ll record this.” “If you have nothing to hide, you shouldn’t worry.” You start weighing every syllable."
+  },
+  {
+   "n": 31,
+   "title": "Information Overload",
+   "summary": "A flood of words, data and detail meant to exhaust rather than inform.",
+   "how": "An overwhelmed mind drops its critical filters and accepts whatever is easiest to believe. Resistance becomes too tiring to sustain.",
+   "looks": "Endless paperwork, 50-page terms and conditions, someone talking so fast and so long that you nod just to make it stop."
+  },
+  {
+   "n": 32,
+   "title": "Doctored Media / Deepfakes",
+   "summary": "Fabricated images, audio or video presented as evidence.",
+   "how": "We believe what we see, and the correction never travels as fast as the lie. The deeper effect is teaching people to doubt everything.",
+   "looks": "A fake confession, a falsified scandal, staged “proof” that is shared and raged over before the truth emerges."
+  },
+  {
+   "n": 33,
+   "title": "Fake Reviews & Astroturfing",
+   "summary": "Artificial voices created to mimic public approval and manufacture trust.",
+   "how": "Social proof reads as credibility. A thousand “satisfied customers” drown out one genuine dissenting voice until truth looks like the minority view.",
+   "looks": "Glowing testimonials, falsified comments and orchestrated endorsements. The name comes from fake grass: an imitation of authenticity."
+  },
+  {
+   "n": 34,
+   "title": "Data-Targeted Persuasion",
+   "summary": "Using your own data to predict and steer how you feel, disguised as personalisation.",
+   "how": "Every click, scroll and pause maps your fears and desires, so the nudge arrives at the moment you are most vulnerable.",
+   "looks": "The ad that feels coincidentally relevant, the politician who “just gets you”, arriving late at night, after heartbreak or during stress."
+  },
+  {
+   "n": 35,
+   "title": "Isolation Tactics",
+   "summary": "Quietly cutting someone off from their support system until one voice is left.",
+   "how": "Without outside voices, the manipulator decides what is true and who can be trusted. It can pass for protection, intimacy or love.",
+   "looks": "“They don’t really understand you.” “You don’t need them anymore.” “It’s just us against the world.”"
+  },
+  {
+   "n": 36,
+   "title": "Normalization of Small Violations",
+   "summary": "Eroding boundaries through transgressions that each feel too minor to confront.",
+   "how": "People adapt to discomfort that creeps in gently. They push a limit, retreat before you push back, and the first boundary crossed is only a test.",
+   "looks": "A dismissive comment, a broken promise. Teasing that ends in cruelty. Unethical behaviour that becomes “just how things are”."
+  },
+  {
+   "n": 37,
+   "title": "Withholding Resources",
+   "summary": "Denying what you need (time, money, information, affection) until dependency becomes obedience.",
+   "how": "Generous one moment, withholding the next. The unpredictability keeps you hooked and shrinking your expectations to keep the peace.",
+   "looks": "A boss who controls information, love given and withdrawn like a paycheck, intimacy rationed as a reward for compliance."
+  },
+  {
+   "n": 38,
+   "title": "Blackmail / Extortion",
+   "summary": "Turning a secret or vulnerability into leverage through the threat of exposure.",
+   "how": "Shame isolates and paralyses. The target imagines ruin until surrender seems cheaper than resistance. It depends on secrecy.",
+   "looks": "Threats to tell loved ones or employers, veiled hints at “knowing things”. What breaks it: naming it, documenting it, trusted allies and legal support."
+  },
+  {
+   "n": 39,
+   "title": "Emotional Flooding",
+   "summary": "Unleashing intense emotion all at once to overpower logic and seize control.",
+   "how": "Overwhelm short-circuits clear thinking, and you comply just to make the chaos stop. Its unpredictability trains you to tiptoe.",
+   "looks": "Shouting, uncontrollable crying, relentless accusations. Your calm is treated as proof that you don’t care."
+  },
+  {
+   "n": 40,
+   "title": "Flattery for Favors",
+   "summary": "Praise delivered to disarm you just before a request.",
+   "how": "Feeling valued is rewarding. The compliment comes first, so saying no feels like proving their admiration was misplaced.",
+   "looks": "“You’re incredible at this.” “No one does it like you.” “You’re the only one I trust.” Once the favour is granted, the warmth cools."
+  },
+  {
+   "n": 41,
+   "title": "False Reciprocity",
+   "summary": "Generosity given as an investment in future control.",
+   "how": "Unrequested help creates an emotional debt. They always give on their terms, never yours, and later they collect.",
+   "looks": "Help you didn’t ask for, support you didn’t need, affection with invisible strings. “After all I’ve done for you.”"
+  },
+  {
+   "n": 42,
+   "title": "Crisis Creation",
+   "summary": "Manufacturing chaos so that you depend on their solution.",
+   "how": "Fear shifts the brain from logic to survival, so you stop asking questions. The pattern: break it, fix it, take credit for saving it.",
+   "looks": "Constant drama and invented emergencies, artificial deadlines, a leader who creates a crisis to justify overreach."
+  },
+  {
+   "n": 43,
+   "title": "One-Way Transparency",
+   "summary": "Demanding your openness while revealing nothing real in return.",
+   "how": "Carefully curated oversharing makes you open up. What you share is stored and later used to steer, guilt or wound you.",
+   "looks": "“I just want honesty between us.” Full access to your life while theirs stays behind locked doors."
+  },
+  {
+   "n": 44,
+   "title": "Selective Disclosure",
+   "summary": "Sharing half-truths chosen to shape what you conclude.",
+   "how": "The mind fills in gaps and assumes completeness, so the deception hides behind your own assumptions. No outright lie is needed.",
+   "looks": "Enough truth to seem transparent and win your empathy. The missing detail is the one that would hold them accountable."
+  },
+  {
+   "n": 45,
+   "title": "Overwhelming Deadlines",
+   "summary": "Artificial urgency that forces you to act before you can think.",
+   "how": "Time pressure triggers the stress response and narrows focus. You stop analysing details, and compliance feels like relief.",
+   "looks": "“We need an answer by tonight.” “This offer expires in an hour.” Demands for instant forgiveness or commitment."
+  },
+  {
+   "n": 46,
+   "title": "Appeal to Fear",
+   "summary": "Replacing reasoning with fear of what happens if you don’t agree.",
+   "how": "Fear narrows thought: people act first and question later, clinging to whoever promises safety. It often hides behind a caring tone.",
+   "looks": "“No one else will love you like I do.” Hints that questioning authority risks your career. “Without me, you’re in danger.”"
+  },
+  {
+   "n": 47,
+   "title": "Appeal to Pity",
+   "summary": "Using sympathy to bypass your logic and dismantle your boundaries.",
+   "how": "Once you feel responsible for their hardship you start giving time, forgiveness and compliance, and excuse what you would tolerate from no one else.",
+   "looks": "Tears, trembling, heartbreaking stories. “They’ve been through so much.” Their suffering must always outweigh yours."
+  },
+  {
+   "n": 48,
+   "title": "Blame-Shifting",
+   "summary": "Dodging accountability by making their actions your fault.",
+   "how": "It relies on your decency and wish to be fair. Accept even part of the reasoning and you start apologising for their behaviour.",
+   "looks": "“I wouldn’t have reacted that way if you hadn’t…” They hurt, you explain; they accuse, you defend."
+  },
+  {
+   "n": 49,
+   "title": "Retroactive Justification",
+   "summary": "Rewriting history so that wrongdoing looks reasonable.",
+   "how": "They don’t deny what happened; they reinterpret it until your pain looks like overreaction and you begin to doubt your own memory.",
+   "looks": "“I only did that because I cared.” “You pushed me to it.” Harm repainted as heroism."
+  },
+  {
+   "n": 50,
+   "title": "Selective Flattery",
+   "summary": "Praise aimed only at the parts of you that serve their purpose.",
+   "how": "Timing is the tool: praise is withheld when you resist and given when you comply, until approval is linked to obedience.",
+   "looks": "A boss praising your dedication right before extra work. Someone admiring your generosity while crossing your boundaries."
+  },
+  {
+   "n": 51,
+   "title": "Confusion by Contradiction",
+   "summary": "Inconsistent statements and rapid reversals that make reality feel unstable.",
+   "how": "A mind that can’t find steady ground stops trusting itself and leans on theirs. Fatigue makes compliance easier than confrontation.",
+   "looks": "Praise one day, criticism for the same thing the next. “I never said that,” moments after saying it."
+  },
+  {
+   "n": 52,
+   "title": "False Equivalence",
+   "summary": "Comparing two things that are not truly alike to blur responsibility.",
+   "how": "It exploits your sense of fairness. Agree that “maybe we’re both to blame” and accountability drowns in the comparison.",
+   "looks": "“You’ve done the same thing.” “Both sides are just as bad.” “You raised your voice too.” “Everyone bends the rules.”"
+  },
+  {
+   "n": 53,
+   "title": "Delegitimizing Critics",
+   "summary": "Attacking the messenger’s credibility instead of answering the facts.",
+   "how": "Innuendo erodes a reputation without evidence. Bystanders see the cost of speaking up, keep their distance and stay silent.",
+   "looks": "“They’ve always had an agenda.” “They’re just jealous.” “You can’t trust someone like that.”"
+  },
+  {
+   "n": 54,
+   "title": "Redirection",
+   "summary": "Shifting focus away from the issue towards something safer or more emotionally charged.",
+   "how": "You chase the new topic thinking you are making progress, while the original issue quietly disappears. It exhausts rather than silences.",
+   "looks": "You raise a concern; they question your tone, memory or motives, or bring up your past mistakes. Now you are defending yourself."
+  },
+  {
+   "n": 55,
+   "title": "Overpromising Future Rewards",
+   "summary": "Dangling a glowing future to keep you compliant in the present.",
+   "how": "Once you have imagined the reward you are invested, and each delay deepens the attachment. The timeline always stretches.",
+   "looks": "A promotion “once you prove yourself”. Change “after this rough patch”. “You just have to trust me.” “Good things take time.”"
+  },
+  {
+   "n": 56,
+   "title": "Iterative Conditioning",
+   "summary": "Shaping behaviour through small, repeated rewards and punishments.",
+   "how": "Approval starts to feel safe and disapproval unbearable, so you anticipate their moods and reshape your choices before they ask.",
+   "looks": "A smile for compliance, silence for resistance. Each instance is easy to excuse; strung together they form a pattern."
+  },
+  {
+   "n": 57,
+   "title": "Secret Clauses",
+   "summary": "Unspoken terms that are revealed only after you are committed.",
+   "how": "They rely on your assumption of good faith, wait until you are invested, then insist you simply forgot or misunderstood.",
+   "looks": "A favour that suddenly has strings. A job that expects unpaid loyalty. Expectations you never agreed to but are blamed for breaking."
+  },
+  {
+   "n": 58,
+   "title": "False Equivalence of Sacrifice",
+   "summary": "Claiming you owe them for what they gave up, when the sacrifices were never equal.",
+   "how": "It hijacks the instinct to make things even, recasting their own choices as suffering on your behalf. Gratitude becomes servitude.",
+   "looks": "“After everything I’ve done for you.” A boss citing their long hours. A parent rewriting love as a lifelong debt."
+  },
+  {
+   "n": 59,
+   "title": "Social Isolation in Groups",
+   "summary": "Quietly turning a group against one person, who stays present but shut out.",
+   "how": "Half-truths and highlighted mistakes make others pull back. It is never open hostility, so calling it out sounds paranoid.",
+   "looks": "Conversations pause when you walk in. Decisions happen without you. Smiles are polite but empty."
+  },
+  {
+   "n": 60,
+   "title": "Smear Campaigns",
+   "summary": "Systematic damage to someone’s credibility through lies, half-truths and whispers.",
+   "how": "A rumour can’t be unheard, and people distance themselves to avoid the fallout. Silence “proves” guilt; defending yourself becomes “overreaction”.",
+   "looks": "“I’m just concerned…” “You know, I’ve heard things.” Hints and insinuations that sound caring."
+  },
+  {
+   "n": 61,
+   "title": "Manufactured Incompetence",
+   "summary": "Pretending to be incapable just long enough for someone else to take over.",
+   "how": "It looks like need, not manipulation. You step in “just this once”, and it becomes the routine: they don’t have to try because you always will.",
+   "looks": "“I just don’t know how.” The coworker who forgets how until you do it. The partner who “can’t cook” or “isn’t good with bills”."
+  },
+  {
+   "n": 62,
+   "title": "Selective Empathy",
+   "summary": "Compassion switched on when it benefits them and off when it doesn’t.",
+   "how": "You come to link emotional safety with obedience: soothed when you please them, frozen out when you question them.",
+   "looks": "Warmth and reassurance, then ice the moment your feelings clash with their interests. Leaders who support some and ignore others."
+  },
+  {
+   "n": 63,
+   "title": "Threats of Economic Harm",
+   "summary": "Using financial fear to bend someone’s will.",
+   "how": "Money ties to survival, so the threat only needs to be implied. You self-censor because the cost of defiance feels unbearable.",
+   "looks": "“Team players get the raises.” Freezing shared accounts after arguments. A landlord hinting at eviction if you speak up."
+  },
+  {
+   "n": 64,
+   "title": "Moral Grandstanding",
+   "summary": "A performance of righteousness used to dominate rather than to do good.",
+   "how": "Morality is used as a cudgel: question them and you are heartless, hesitate and you are complicit. The more you appease, the higher the bar.",
+   "looks": "Loud outrage wherever reputation is currency: online, at work, in families. You scramble to prove your own decency."
+  },
+  {
+   "n": 65,
+   "title": "Backhanded Compliments",
+   "summary": "Phrases that sound like praise but carry a put-down.",
+   "how": "Criticism cloaked in charm is risky to call out: react and you seem oversensitive, stay silent and the self-doubt takes root.",
+   "looks": "“You look great for your age.” “I didn’t expect you to handle that so well.” “You’re smarter than you seem.” “I was just being nice.”"
+  },
+  {
+   "n": 66,
+   "title": "Micro-Manipulation of Language",
+   "summary": "Subtle shifts in wording and tone that distort meaning and blur accountability.",
+   "how": "Ambiguity gives plausible deniability. They never lie outright; they guide your interpretation until you doubt what was meant.",
+   "looks": "“I never said that.” “You’re reading too much into it.” “I was just joking.” Past conversations constantly redefined."
+  },
+  {
+   "n": 67,
+   "title": "Overly Complex Contract Language",
+   "summary": "Dense wording designed to confuse, fatigue and quietly bind.",
+   "how": "Complexity looks like authority, and most people won’t admit confusion. You blame your intelligence instead of their integrity.",
+   "looks": "Hidden fees, one-sided terms and endless obligations in the fine print. Personal “rules” that sound fair but are deliberately convoluted."
+  },
+  {
+   "n": 68,
+   "title": "Illicit Information Gathering",
+   "summary": "Collecting your secrets, fears and weak points under cover of curiosity or care.",
+   "how": "False intimacy invites oversharing. What you say in trust is stored and used later as leverage when control is needed.",
+   "looks": "“How are things at work? Do you trust your boss? Are you and your family still close?” Attentive questions that map your pressure points."
+  },
+  {
+   "n": 69,
+   "title": "False Friendship",
+   "summary": "Closeness built for leverage rather than care.",
+   "how": "Mirroring and charm win your trust. Warmth then alternates with withdrawal, so you chase the version of them that felt genuine.",
+   "looks": "The ally who praises you publicly and undermines you privately. The confidant who only shows up when they need something."
+  },
+  {
+   "n": 70,
+   "title": "Tokenism",
+   "summary": "A gesture of inclusion that projects fairness while nothing actually changes.",
+   "how": "One visible person becomes “proof” that everything is equal, shielding the system from criticism while they are praised and silenced.",
+   "looks": "The lone woman on a board used to deflect criticism. A single character added to tick a box. “You should be grateful to be included.”"
+  },
+  {
+   "n": 71,
+   "title": "Selective Accountability",
+   "summary": "Enforcing rules on others while quietly exempting yourself.",
+   "how": "Watching rules shift with power teaches you that fairness is a privilege, so you police yourself harder than they ever could.",
+   "looks": "Leaders punishing mistakes they make themselves. Partners demanding honesty while lying. “Don’t make this about me.”"
+  },
+  {
+   "n": 72,
+   "title": "Coercive Penalties Tied to Deadlines",
+   "summary": "False urgency with a threat attached, forcing you to choose under duress.",
+   "how": "Fear of loss or punishment pushes the brain into survival mode. They want your fastest compliance, not your best decision.",
+   "looks": "“If you don’t decide by tonight, the offer is gone.” “If this isn’t done by morning, there will be consequences.” Framed as “policy”."
+  },
+  {
+   "n": 73,
+   "title": "Peer Pressure Within Hierarchy",
+   "summary": "The silent expectation to conform: please those above, fit in with those beside you.",
+   "how": "Belonging becomes the leash. Nobody needs to threaten you: the risk of exclusion makes you police yourself, and the group enforces it.",
+   "looks": "A raised eyebrow from a superior, a knowing glance among peers, ideas that are quietly off limits. You call it professionalism."
+  },
+  {
+   "n": 74,
+   "title": "Framing / Manipulating Data",
+   "summary": "Twisting context, omitting detail and cherry-picking numbers so manipulation looks like logic.",
+   "how": "We trust numbers because they feel objective. Once data looks official, people stop questioning its source or what was left out.",
+   "looks": "“The data proves it.” Polished reports, selective comparisons, statistics framed to amplify fear or success. Sharing only certain facts."
+  },
+  {
+   "n": 75,
+   "title": "Conditional Offers",
+   "summary": "Promises and gifts that come with invisible strings: “you can have this, but only on my terms.”",
+   "how": "It targets what you need most and dangles it just out of reach. You are not forced, so hesitating feels ungrateful.",
+   "looks": "A raise if you stay loyal. Love if you stop questioning. Help “as long as you remember who was there for you”."
+  },
+  {
+   "n": 76,
+   "title": "Reputation Threats",
+   "summary": "The promise to destroy your image if you don’t comply.",
+   "how": "Confidences shared in trust are stored as leverage. The threat need not be spoken or carried out: you censor yourself first.",
+   "looks": "“I could ruin you.” “You wouldn’t want people to know about that, would you?”"
+  },
+  {
+   "n": 77,
+   "title": "Exploiting Scarcity of Alternatives",
+   "summary": "Convincing you that they alone hold what you need, and that you can’t do better.",
+   "how": "Subtle isolation shrinks your world while your confidence is eroded and the risk of leaving exaggerated. The scarcity is usually engineered.",
+   "looks": "“You’ll never find someone who cares like I do.” “Other companies won’t treat you this well.” “You’re lucky to even have this.”"
+  },
+  {
+   "n": 78,
+   "title": "Pseudo-Expertise",
+   "summary": "Confidence masquerading as credibility.",
+   "how": "People are drawn to certainty more than truth. Making you feel less informed positions them as the authority you must rely on.",
+   "looks": "Jargon, half-understood studies, vague “industry insights”, every question answered with tone instead of proof."
+  },
+  {
+   "n": 79,
+   "title": "Forced Framing",
+   "summary": "Defining the terms of the discussion before you have a chance to think.",
+   "how": "Once you step into their frame, every response reinforces it: defend yourself inside their narrative, or stay silent and confirm it.",
+   "looks": "“Why are you overreacting again?” “When did you decide to stop caring?” You end up using their definitions."
+  },
+  {
+   "n": 80,
+   "title": "Conditional Sympathy",
+   "summary": "Comfort offered only when it serves their agenda.",
+   "how": "They become your refuge, so their approval feels like relief. Comfort is granted when you align and withdrawn when you resist.",
+   "looks": "They listen and soothe, then the warmth vanishes once you disagree. You stop voicing pain that doesn’t flatter them."
+  },
+  {
+   "n": 81,
+   "title": "Time-Slicing Decisions",
+   "summary": "Breaking a big decision into fragments small enough to seem harmless.",
+   "how": "Faced with a series of minor, time-pressured choices, we stop evaluating the larger picture. By the final piece, no feels impossible.",
+   "looks": "“Just agree to this part for now.” “We’ll discuss the rest later.” “It’s only temporary.” Boundaries escalated inch by inch."
+  },
+  {
+   "n": 82,
+   "title": "Incremental Financial Commitments",
+   "summary": "Getting repeated yeses to slightly larger costs until you are too entangled to walk away.",
+   "how": "The sunk cost fallacy: once you have invested money, time or effort, you feel compelled to justify it. Your fear of losing it does the work.",
+   "looks": "A small, harmless fee that keeps growing. “You’ve already come this far.” “It would be a waste to stop now.”"
+  },
+  {
+   "n": 83,
+   "title": "Delegation Ambush",
+   "summary": "Handing over a task or problem at the last moment and calling it collaboration.",
+   "how": "It is timed so that saying no looks selfish. If you fail, they stay clean; if you succeed, they take the credit.",
+   "looks": "Right before a deadline: “I know you’re great at this.” “You’re the only one I can count on.” Then: “I thought you didn’t mind helping.”"
+  },
+  {
+   "n": 84,
+   "title": "False Timelines for Review",
+   "summary": "Calculated delays dressed up as process, to keep you waiting, hoping and compliant.",
+   "how": "Just enough reassurance to keep hope alive, never enough closure to set you free. You start doubting your right to demand answers.",
+   "looks": "“We just need more time to review this.” “It’s under consideration.” “We’ll revisit it next week.”"
+  },
+  {
+   "n": 85,
+   "title": "Parallel Narratives",
+   "summary": "Keeping conflicting versions of reality alive, each tailored to a different audience.",
+   "how": "No one sees the full picture, so anyone who challenges them sounds confused or biased, and the truth sounds too contradictory to believe.",
+   "looks": "To superiors, the loyal victim of misunderstanding. To subordinates, the misunderstood hero. To you, the confidant who sees “the real them”."
+  },
+  {
+   "n": 86,
+   "title": "Overuse of Confidentiality",
+   "summary": "Invoking privacy to suppress questions, isolate people and avoid accountability.",
+   "how": "Declaring everything “sensitive” turns silence into policy. Silence then looks honourable and truth-telling looks disloyal.",
+   "looks": "“You can’t talk about this.” “Don’t tell anyone what I said, it’s just between us.” Non-disclosure culture at work."
+  },
+  {
+   "n": 87,
+   "title": "Cultural Exploitation",
+   "summary": "Taking a culture’s symbols, traditions or labour for gain while calling it appreciation.",
+   "how": "To outsiders it looks like flattery, so it goes unchallenged. Visibility is mistaken for respect while the original voices go unheard.",
+   "looks": "Sacred symbols borrowed for fashion trends, cultural phrases sprinkled into ads to seem inclusive, rituals mimicked without their history."
+  },
+  {
+   "n": 88,
+   "title": "Tone Policing to Silence",
+   "summary": "Dismissing your message by attacking the way you express it.",
+   "how": "The focus shifts from what you said to how you said it. You soften and censor yourself to be heard, and end up heard less.",
+   "looks": "“Calm down.” “You’re being too emotional.” “I’d listen if you weren’t so angry.”"
+  },
+  {
+   "n": 89,
+   "title": "False Benevolence",
+   "summary": "A display of generosity meant to gain rather than to give.",
+   "how": "We instinctively trust kindness. Gifts and favours make you dependent or indebted, so the later demand sounds reasonable.",
+   "looks": "Leaders who preach virtue while exploiting followers. Mentors who build loyalty to cash it in later. Reminders of what they sacrificed."
+  },
+  {
+   "n": 90,
+   "title": "Legal Intimidation",
+   "summary": "Using laws, contracts and threats of litigation to instil fear rather than seek fairness.",
+   "how": "Most people dread conflict with authority and can’t afford a long legal battle. The aim is not to win but to make you too afraid to fight.",
+   "looks": "“I’ll sue you.” “My lawyer will handle this.” “You’re violating the contract.” Cease-and-desist letters and NDAs used to muzzle."
+  },
+  {
+   "n": 91,
+   "title": "Playing the Martyr",
+   "summary": "Suffering loudly enough to control others through guilt and obligation.",
+   "how": "Appearing selfless makes everyone else feel selfish by comparison. They never ask directly; they wait for your guilt to fill the silence.",
+   "looks": "“Don’t worry about me,” with a sigh. Working harder, visibly exhausted. When you set a boundary: “After everything I’ve done for you.”"
+  },
+  {
+   "n": 92,
+   "title": "Manufactured Polls / Polling Bias",
+   "summary": "Polls engineered to fabricate public opinion rather than reflect it.",
+   "how": "Hand-picked participants, leading questions and omitted options produce a result that feels scientific. People then agree with what they think everyone else believes.",
+   "looks": "Official-looking charts echoed by headlines and social media. The message: “You’re in the minority. You’re out of touch.”"
+  },
+  {
+   "n": 93,
+   "title": "Overreliance on Secrecy",
+   "summary": "Concealing information and restricting access under the guise of protection or professionalism.",
+   "how": "When only one person holds the full picture, everyone else depends on fragments and must trust what they cannot verify.",
+   "looks": "“Need to know.” “Private matter.” Withheld data and hidden agendas. Unexplained absences defended with “you wouldn’t understand”."
+  },
+  {
+   "n": 94,
+   "title": "Information Hoarding",
+   "summary": "Withholding, filtering or monopolising knowledge to keep power over others.",
+   "how": "Whoever controls the flow of information becomes the gatekeeper of clarity. You rely on them for direction and doubt your own understanding.",
+   "looks": "“Forgetting” to share key details until it is too late, so others look unprepared. Only fragments of the truth, leaving you to guess."
+  }
+ ]
+}

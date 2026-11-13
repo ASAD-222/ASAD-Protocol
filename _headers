@@ -1,0 +1,15 @@
+# Cloudflare Pages headers for A$AD Protocol
+# Make the phone always fetch the newest HTML after a deploy (no stale app).
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Robots-Tag: noindex, nofollow
+
+/
+  Cache-Control: no-cache
+
+/*.html
+  Cache-Control: no-cache
+
+/playbook-data.json
+  Cache-Control: no-cache
